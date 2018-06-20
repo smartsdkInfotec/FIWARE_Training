@@ -118,41 +118,30 @@ En este punto, su unidad de monitoreo de calidad del aire está lista para ser p
   ![Cloudino device online and ready to be used](./images//cdn_12.png)
   *Fig. 12. El dispositivo está en línea y listo para usarse.*
 
-### Define your application's logic through the development tools from cloudino.io
+### Definición de la lógica de la aplicación a través de las herramientas de desarrollo de cloudino.io
 
-Once a CWC is registered in [cloudino.io](http://cloudino.io/), we can proceed
-to program it along with the associated hardware "Arduino UNO" and sensors showed
-in Fig. 1. to define the behaviour of the IoT air quality monitoring application.
+Una vez realizada la configuración del conector WiFi de Cloudino, podemos proceder a su programación con el hardware asociado "Arduino Uno" y los sensores (vea la Fig. 1. Diagrama de la unidad de monitoreo de calidad del aire), para definir el comportamiento de la aplicación de monitoreo de la calidad del aire. 
 
-At first, we need to create a sketch –project- which has the same context and
-meaning of the Arduino technology. You must select the **"Arduino"** section
-from the dropdown menu indicated with **</>** icon and go to **"Sketchers"**,
-where you can create or edit projects to be used on Arduino boards with the
-Cloudino technology. Select the **"Add Sketcher"** option as seen on Fig. 13.
+En primer lugar, se requiere crear un "sketch" (un programa usado para controlar una placa Arduino), el cual tiene el mismo contexto y significado que en la tecnología Arduino. Para ello, haga clic en la sección **"Arduino"** del menú desplegable del lado superior derecho que se indica con el icono </> y acceda a **"Sketchers"**, donde puede crear o editar proyectos para usar en las placas Arduino con la tecnología Cloudino. Seleccione la opción **"Add Sketcher"** como se muestra en la Fig. 13.
 
   ![Add Sketcher option in the Arduino menu](./images//cdn_13.png)
-  *Fig. 13. Add Sketcher option in the Arduino menu*
+  *Fig. 13. Opción para agregar un "Sketch" en el menu de Arduino*
 
-Then, you must enter a name for your Sketch (a program used to control an
-Arduino board), and press the "Submit" button, it will display a Sketcher
-area as shown in Figs. 14, 15.
+Ya que se encuentra en la opción "Add Sketcher", ingrese un nombre para su "Sketch" y presione el botón "Submit" (Figs. 14).  
 
   ![Define the name of your sketcher](./images//cdn_14.png)
-  *Fig. 14. Define the name of your sketcher*
+  *Fig. 14. Definir el nombre del Sketch*
+
+Posteriormente, se mostrará el área de codificación del "Sketch" como se muestra en la Fig. 15.
 
   ![Sketcher area: compile, save and delete your code](./images//cdn_15.png)
-  *Fig. 15. Sketcher area: compile, save and delete your code*
+  *Fig. 15. Área de codificación del "Sketch"*
+  
+En el área de codificación del "Sketch" puede escribir el código para controlar el Arduino, el conector WiFi de Cloudino y los sensores para el monitoreo remoto de su unidad de monitoreo de la calidad del aire.
 
-In Sketcher area, see Fig. 15, you can write the code to control Arduino,
-CWC and sensors for remote monitoring of your air quality unit. The
-code syntax is based on the Cloudino API (Application Programming Interface)
-which is a variant from Arduino, making it easier to be adopted by former
-and new arduino users. A broad description of the Cloudino API can be found
-at <https://github.com/Cloudino/Cloudino-Doc>.
+La sintaxis del código se basa en la API (Interfaz de programación de aplicaciones) de Cloudino que es una variante de Arduino, lo que facilita la adopción por parte de antiguos y nuevos usuarios de Arduino. Se puede encontrar una descripción amplia de la API de Cloudino en https://github.com/Cloudino/Cloudino-Doc.
 
-Below we can see the arduino code to be used in the development of our air
-quality monitoring unit. It sends the raw values captured from the sensors
-showed in the diagram from Fig. 1 to the Cloudino platform using a post method.
+A continuación se puede ver el código Arduino que se utilizará en el desarrollo de nuestra unidad de monitoreo de la calidad del aire. El código envía los valores brutos capturados desde los sensores de la unidad de monitoreo de calidad del aire a la plataforma Cloudino usando un método de publicación.
 
 ```c++
 #include <Cloudino.h>
@@ -188,11 +177,9 @@ void loop()
    cdino.loop();
 }
 ```
+***El código anterior captura los datos brutos de los sensores, excepto el DHT11, que hace uso de su propia biblioteca para calcular la temperatura y la humedad relativa correctas. Para representar correctamente las mediciones de muchos sensores, es posible que se necesiten bibliotecas adicionales.***
 
-***The previous code captures the raw data from sensors except the DHT11
-which makes use of its own library to calculate the correct temperature and
-relative humidity. To properly represent the measurements from many sensors,
-additional libraries might be needed***
+Una vez que se ha escrito el código para el "sketch", se debe guardar y compilar para verificar que sea consistente con la API de Cloudino. Este proceso se realiza haciendo clic en el botón "Compile" como se muestra en la Fig. 16. El cuadro azul (Console) muestra el estado de la compilación, donde podrá ver si se presentó algún error o se realizó con éxito. Consultar la API de Cloudino en el [sitio web de Cloudino](https://github.com/Cloudino/Cloudino-Doc)., para resolver cualquier problema de compilación. 
 
 Once the code for the sketch has been written, it must be saved and compiled to
 verify that it is consistent with the Cloudino API, this process is performed
