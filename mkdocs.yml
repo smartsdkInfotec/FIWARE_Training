@@ -11,7 +11,9 @@ pages:
         - 'Qué es FIWARE': 'ecosistemaFIWARE/introduction.md'
         - 'Orion Context Broker': 'ecosistemaFIWARE/ocb.md'
         - 'Modelo NGSI': 'ecosistemaFIWARE/ngsi.md'
-        - 'Operaciones en OCB': 'ecosistemaFIWARE/operations.md'        
+        - 'Operaciones en OCB': 'ecosistemaFIWARE/operations.md'
+        - 'Modelos de datos': 'ecosistemaFIWARE/datamodels.md'
+        - 'Modelos de datos': 'ecosistemaFIWARE/FIWARELab.md'
     - Descripción del caso de estudio:
         - 'Crea tu unidad de monitoreo': 'sensores/cloudino.md'
         - 'Datos abiertos de la CDMX': 'datosabiertos/airecdmx.md'
