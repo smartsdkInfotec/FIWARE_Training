@@ -7,7 +7,7 @@ theme: readthedocs
 pages:
     - Inicio: 'index.md'
     - Introducción: 'introduction.md'
-    - El ecosistema FIWARE
+    - El ecosistema FIWARE:
         - 'Qué es FIWARE': 'ecosistemaFIWARE/introduction.md'
 #
 #markdown_extensions: [toc,fenced_code]
