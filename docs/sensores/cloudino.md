@@ -34,37 +34,27 @@ El conector WiFi de Cloudino puede ser adquirido directamente contactando a su d
 o puede construir su propio conector utilizando un dispositivo [ESP8266](https://www.sparkfun.com/products/13678)
 y siguiendo las instrucciones de la [documentación de Cloudino](https://github.com/Cloudino/Cloudino-Doc/wiki/Make-your-first-Cloudino).
 
-## How to add Air Quality sensors
+## Modelo de conexión de la unidad de monitoreo de calidad del aire 
 
-Fig. 1 shows the schematic model for an air quality unit where the Arduino UNO
-Board connects 4 sensors that measures: temperature, humidity, CO, Ozone, NO2
-and dust (PM10) along the CWC which allows us to automatically sense air quality
-measurements and share the information to the cloud using
-[cloudino.io](http://cloudino.io/) portal.
+Fig. 1 muestra el modelo de conexión para una unidad de monitoreo de calidad del aire donde la placa de Arduino Uno conecta cuatro sensores, los cuales miden: temperatura, humedad, monóxido de carbono (CO), óxido de nitrógeno (NO2) y partículas de polvo (PM10), además conecta el conector WiFi de Cloudino que permite enviar las mediciones de los sensores a la nube utilizando el portal
+[cloudino.io](http://cloudino.io/).
 
   ![Air monitoring unit diagram](./images//cdn_01.png)
   *Fig. 1. Air monitoring unit diagram*
 
-The proposed schematic is intended for guidance/educational purposes and its
-components are easy to find; however, you can integrate any additional
-electronic components to your Arduino board to create more complex systems and
-post your measurements to both Cloudino and FIWARE platforms.
+El esquema es propuesto con fines educativos y sus componentes son fáciles de conseguir. Sin embargo, es posible integrar algún componente electrónico adicional que se desee a la placa de Arduino para crear sistemas más complejos y de esta manera publicar sus datos en las plataformas de Cloudino y FIWARE. 
 
-## How to install and configure it
+## Instalación y configuración
 
-### Create an application development environment at cloudino.io
+### Crear un ambiente de desarrollo en Cloudino.io
 
-In order to use the Cloudino Platform, it is necessary to access the
-[cloudino.io](http://cloudino.io/) portal which includes the tools that allows
-us to connect any device to IoT.
+Para utilizar la plataforma de Cloudino, es necesario ingresar al portal
+[cloudino.io](http://cloudino.io/) donde se encuentran las herramientas que nos permitirán conectar cualquier dispositivo al Internet de las Cosas. 
 
   ![Cloudino.io Portal](./images//cdn_02.png)
   *Fig. 2. Cloudino.io Portal*
 
-Firstly you need to create an account and login to the platform where you will
-find a configuration section to manage Cloudino devices, clouding rules and
-[FIWARE Orion Context Broker (OCB)](https://fiware-orion.readthedocs.io)
-connections as well as a main Getting Started guide.
+En primer lugar, se requiere crear una cuenta e iniciar sesión en la plataforma, donde encontrará una sección de configuración para gestionar los dispositivos Cloudino, conexiones al [FIWARE Orion Context Broker (OCB)](https://fiware-orion.readthedocs.io), así como una guía de inicio. 
 
   ![Login page](./images//cdn_03.png)
   *Fig. 3. Login page*
@@ -72,20 +62,13 @@ connections as well as a main Getting Started guide.
   ![Cloudino.io User's Main page](./images//cdn_04.png)
   *Fig. 4. Cloudino.io User's Main page*
 
-To connect your air quality sensor unit to the Cloudino platform, the Cloudino
-Wifi Connector needs to be set up in the portal. **CWC is the hardware with Cloudino
-tecnology that allows you to connect any device to IoT**.
+El conector WiFi de Cloudino debe configurarse desde el portal para conectar su unidad de monitoreo de calidad del aire a la plataforma de Cloudino. Para ello registraremos un dispositivo en el portal. 
 
   ![Cloudino Wifi Connector](./images//cdn_05.png)
   *Fig. 5. Cloudino Wifi Connector*
 
-From the left side panel, select the Devices Menu and click the "Add Device" option.
-Then introduce a name, description and hardware type configuration; In this
-case, an Arduino UNO will be used for developing our air quality sensor unit as
-seen on Fig. 1. *You must select the proper hardware type (Arduino) to use from
-the list or use Cloudino as standalone device*.
-Click on the "Submit" button and our device will be created.
-You can register as many CWCs devices as you need.
+Del lado izquierdo del panel, seleccione el menú "Devices" y haga clic en la opción "Add Device". 
+Introduzca un nombre, descripción y tipo de hardware. En este caso, utilizaremos un Arduino Uno. Haga clic en "Submit" para dar de alta el dispositivo. Se puede registrar la cantidad de dispositivos que se desee. 
 
   ![CWC device registed](./images//cdn_06.png)
   *Fig. 6. CWC device registered*
