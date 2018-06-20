@@ -1,15 +1,10 @@
-# Creating your Air Quality Sensor with Cloudino
+# Creación de una unidad de monitoreo de calidad del aire con Cloudino
 
-## Introduction
+## Introducción 
 
-This guide will help you to create your own air quality sensor unit
-using Cloudino, an IoT (Internet of Things) Agent, to remotely monitor your
-sensors and send your data to the FIWARE platform.
+Esta guía proporciona la información necesaria para crear una unidad de monitoreo de calidad del aire utilizando Cloudino, un agente de Internet de las Cosas, que permite monitorear sensores de manera remota y enviar datos a la plataforma FIWARE. 
+El conector WiFi de Cloudino (Cloudino WiFi Connector) puede ser utilizado como un dispositivo independiente para comunicar objetos de la vida real directamente a internet o como un microcontrolador adicional dedicado a la capa de red, trabajando en paralelo con soluciones de microcontroladores actuales como Arduino.
 
-The Cloudino WiFi Connector can be used as a standalone device to directly
-communicate real-life objects to the internet or as an additional microcontroller
-dedicated to the network layer, working in parallel with actual microcontroller
-solutions like Arduino.
 
 ## What you need to order
 
