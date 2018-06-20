@@ -179,27 +179,19 @@ void loop()
 ```
 ***El código anterior captura los datos brutos de los sensores, excepto el DHT11, que hace uso de su propia biblioteca para calcular la temperatura y la humedad relativa correctas. Para representar correctamente las mediciones de muchos sensores, es posible que se necesiten bibliotecas adicionales.***
 
-Una vez que se ha escrito el código para el "sketch", se debe guardar y compilar para verificar que sea consistente con la API de Cloudino. Este proceso se realiza haciendo clic en el botón "Compile" como se muestra en la Fig. 16. El cuadro azul (Console) muestra el estado de la compilación, donde podrá ver si se presentó algún error o se realizó con éxito. Consultar la API de Cloudino en el [sitio web de Cloudino](https://github.com/Cloudino/Cloudino-Doc)., para resolver cualquier problema de compilación. 
-
-Once the code for the sketch has been written, it must be saved and compiled to
-verify that it is consistent with the Cloudino API, this process is performed
-by clicking the "Compile" button as shown in Fig. 16. The blue box (Console)
-shows the compilation status, here you can be aware of any compilation errors
-and success. To solve any compilation problems you should consult the Cloudino
-API on the [Cloudino website](https://github.com/Cloudino/Cloudino-Doc).
+Una vez que se ha escrito el código para el "sketch", se debe guardar y compilar para verificar que sea consistente con la API de Cloudino. Este proceso se realiza haciendo clic en el botón "Compile" como se muestra en la Fig. 16. El cuadro azul (Console) muestra el estado de la compilación, donde podrá ver si se presentó algún error o se realizó con éxito. Consultar la API de Cloudino en el [sitio web de Cloudino](https://github.com/Cloudino/Cloudino-Doc), para resolver cualquier problema de compilación. 
 
   ![A sketch compiled with success](./images//cdn_16.png)
-  *Fig 16. A sketch compiled with success*
+  *Fig 16. Sketch compilado con éxito*
 
-Now, the created sketch must be loaded to the actual device. This is done by
-using the "Upload Sketch" section within the selected device that is going to
-be configured.
+Ahora, cargaremos el "Sketch" en el dispositivo asociado a nuestra unidad de monitoreo. Para ello, haga clic en la sección "Upload Sketch" (Fig. 17).
 
   ![“Upload Sketch” section from the selected device](./images//cdn_17.png)
-  *Fig. 17. “Upload Sketch” section from the selected device*
+  *Fig. 17. Sección "Upload Sketch"*
 
-A list of sketches developed by the user and samples is shown. We need to select
-the recently created sketch named "AirQualityMonitorUnit_sketch" and press the
+En el campo "Upload from Sketcher" se despliega una lista de los "sketch´s" existentes en la plataforma, incluyendo ejemplos y los desarrollados por el usuario de la sesión. Seleccione el "Sketch" que acaba de crear (en este ejemplo lo llamamos "AirQualityMonitorUnit_sketch") como se muestra en la Fig. 18.
+
+ press the
 "Upload Sketcher" button in order to flash the compiled code in the CWC memory
 and the Arduino board to perform the developed functionality. The application
 logic is stored after flashing concludes succesfully Figures 18 and 19 show the
