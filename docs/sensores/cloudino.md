@@ -32,7 +32,7 @@ Estos componentes se pueden adquirir en alguna tienda de electrónica local o en
 El conector WiFi de Cloudino puede ser adquirido directamente contactando a su desarrollador 
 <javier.solis@infotec.mx>, <victor.hernandez@infotec.mx>
 o puede construir su propio conector utilizando un dispositivo [ESP8266](https://www.sparkfun.com/products/13678)
-y siguiendo las instrucciones de la [documentación de Cloudino].(https://github.com/Cloudino/Cloudino-Doc/wiki/Make-your-first-Cloudino)
+y siguiendo las instrucciones de la [documentación de Cloudino](https://github.com/Cloudino/Cloudino-Doc/wiki/Make-your-first-Cloudino).
 
 ## How to add Air Quality sensors
 
