@@ -21,8 +21,7 @@ Para el propósito de esta guía, utilizaremos los siguientes componentes:
 * [Grove Multichannel](http://cdn-reichelt.de/documents/datenblatt/A300/101020088_01.pdf).
   Sensor de gas (NO2, CO).
 
-You can find the components in your local electronic shop or online in several
-places:
+Estos componentes se pueden adquirir en alguna tienda de electrónica local o en línea. A continuación, presentamos algunas opciones: 
 
 * <https://www.robotshop.com/>
 * <https://www.seeedstudio.com/>
@@ -30,10 +29,10 @@ places:
 * <https://store.arduino.cc/usa/arduino-uno-rev3>
 * <https://www.sparkfun.com/products/13678>
 
-The Cloudino can be acquired directly by contacting the developer
+El conector WiFi de Cloudino puede ser adquirido directamente contactando a su desarrollador 
 <javier.solis@infotec.mx>, <victor.hernandez@infotec.mx>
-or you can even build your own Cloudino device by using a [ESP8266](https://www.sparkfun.com/products/13678)
-and following the instructions from the [Cloudino documentation.](https://github.com/Cloudino/Cloudino-Doc/wiki/Make-your-first-Cloudino)
+o puede construir su propio conector utilizando un dispositivo [ESP8266](https://www.sparkfun.com/products/13678)
+y siguiendo las instrucciones de la [documentación de Cloudino].(https://github.com/Cloudino/Cloudino-Doc/wiki/Make-your-first-Cloudino)
 
 ## How to add Air Quality sensors
 
