@@ -40,7 +40,7 @@ Fig. 1 muestra el modelo de conexión para una unidad de monitoreo de calidad de
 [cloudino.io](http://cloudino.io/).
 
   ![Air monitoring unit diagram](./images//cdn_01.png)
-  *Fig. 1. Air monitoring unit diagram*
+  *Fig. 1. Diagrama de la unidad de monitoreo de calidad del aire*
 
 El esquema es propuesto con fines educativos y sus componentes son fáciles de conseguir. Sin embargo, es posible integrar algún componente electrónico adicional que se desee a la placa de Arduino para crear sistemas más complejos y de esta manera publicar sus datos en las plataformas de Cloudino y FIWARE. 
 
