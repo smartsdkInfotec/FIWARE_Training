@@ -1,2 +1,22 @@
 site_name: Crea tu aplicación con FIWARE
+repo_url: https://github.com/smartsdkInfotec/FIWARE_Training
+edit_uri: edit/master/docs
+site_description: A short guide to use SmartSDK platform
+docs_dir: 'docs'
 theme: readthedocs
+pages:
+    - Inicio: 'index.md'
+    #- Introducción: 'introduction.md'
+    #- El ecosistema FIWARE
+        #- 'Qué es FIWARE': 'ecosistemaFIWARE/introduction.md'
+        #- 'Orion Context Broker': 'ecosistemaFIWARE/ocb.md'
+        #- 'Modelo NGSI': 'ecosistemaFIWARE/ngsi.md'
+        #- 'Operaciones en OCB': 'ecosistemaFIWARE/operations.md'        
+    #- Descripción del caso de estudio
+        #- 'Crea tu unidad de monitoreo': 'sensores/cloudino.md'
+        #- 'Datos abiertos de la CDMX': 'datosabiertos/airecdmx.md'
+ #   
+       #- 'Additional Documentation': 'references.md'
+#
+#markdown_extensions: [toc,fenced_code]
+extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
