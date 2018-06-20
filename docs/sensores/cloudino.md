@@ -6,27 +6,20 @@ Esta guía proporciona la información necesaria para crear una unidad de monito
 El conector WiFi de Cloudino (Cloudino WiFi Connector) puede ser utilizado como un dispositivo independiente para comunicar objetos de la vida real directamente a internet o como un microcontrolador adicional dedicado a la capa de red, trabajando en paralelo con soluciones de microcontroladores actuales como Arduino.
 
 
-## What you need to order
+## Qué se necesita
 
-While using with Arduino, the Cloudino WiFi Connector works as another processor
-in parallel dedicated only to the network layer including the IoT protocols,
-leaving the Arduino dedicated to connectivity with sensors and actuators and
-allowing reprogramming Arduino via WiFi or Cloud.
-
-In this manner, we can connect any sensor compatible with Arduino and process our
-data through the Cloudino and FIWARE platforms.
-
-For the purpose of this guide we will use the following components to develop our
-air quality sensor unit:
+Utilizando Arduino, el conector WiFi de Cloudino funciona como otro procesador en paralelo dedicado solamente a la capa de red, incluyendo los protocolos de Internet de las Cosas, dejando al Arduino dedicado a la conectividad con sensores y actuadores y permitiendo reprogramar al Arduino vía WiFi o a través de la Nube. 
+De esta manera, podemos conectar cualquier sensor compatible con Arduino y procesar los datos a través de Cloudino y la plataforma FIWARE. 
+Para el propósito de esta guía, utilizaremos los siguientes componentes:
 
 * [Cloudino WiFi Connector (CWC)](http://cloudino.io).
 * [Arduino UNO](https://store.arduino.cc/usa/arduino-uno-rev3).
-* [PPD42NS](https://www.mouser.com/ds/2/744/Seeed_101020012-1217636.pdf). PM10 Sensor.
-* [DHT11](http://www.micropik.com/PDF/dht11.pdf). Temperature / Humidity Sensor.
+* [PPD42NS](https://www.mouser.com/ds/2/744/Seeed_101020012-1217636.pdf). Sensor PM10.
+* [DHT11](http://www.micropik.com/PDF/dht11.pdf). Sensor de temperatura / Humedad.
 * [MQ-131](https://www.compel.ru/item-pdf/cf02de305c8369719f27e4149395c6da/pn/winsen~mq131-high-concentration-ozone-gas-sensor.pdf).
-  Ozone Sensor.
+  Sensor de Ozono.
 * [Grove Multichannel](http://cdn-reichelt.de/documents/datenblatt/A300/101020088_01.pdf).
-  Gas Sensor (NO2, CO).
+  Sensor de gas (NO2, CO).
 
 You can find the components in your local electronic shop or online in several
 places:
