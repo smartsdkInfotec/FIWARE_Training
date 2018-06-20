@@ -52,32 +52,31 @@ Para utilizar la plataforma de Cloudino, es necesario ingresar al portal
 [cloudino.io](http://cloudino.io/) donde se encuentran las herramientas que nos permitirán conectar cualquier dispositivo al Internet de las Cosas. 
 
   ![Cloudino.io Portal](./images//cdn_02.png)
-  *Fig. 2. Cloudino.io Portal*
+  *Fig. 2. Portal Cloudino.io*
 
 En primer lugar, se requiere crear una cuenta e iniciar sesión en la plataforma, donde encontrará una sección de configuración para gestionar los dispositivos Cloudino, conexiones al [FIWARE Orion Context Broker (OCB)](https://fiware-orion.readthedocs.io), así como una guía de inicio. 
 
   ![Login page](./images//cdn_03.png)
-  *Fig. 3. Login page*
+  *Fig. 3. Página de inicio de sesión*
 
   ![Cloudino.io User's Main page](./images//cdn_04.png)
-  *Fig. 4. Cloudino.io User's Main page*
+  *Fig. 4. Página de inicio de cloudino.io después de iniciar sesión*
 
 El conector WiFi de Cloudino debe configurarse desde el portal para conectar su unidad de monitoreo de calidad del aire a la plataforma de Cloudino. Para ello registraremos un dispositivo en el portal. 
 
   ![Cloudino Wifi Connector](./images//cdn_05.png)
-  *Fig. 5. Cloudino Wifi Connector*
+  *Fig. 5. Conector WiFi de Cloudino*
 
 Del lado izquierdo del panel, seleccione el menú "Devices" y haga clic en la opción "Add Device". 
 Introduzca un nombre, descripción y tipo de hardware. En este caso, utilizaremos un Arduino Uno. Haga clic en "Submit" para dar de alta el dispositivo. Se puede registrar la cantidad de dispositivos que se desee. 
 
   ![CWC device registed](./images//cdn_06.png)
-  *Fig. 6. CWC device registered*
+  *Fig. 6. Registro del conector WiFi de Cloudino en cloudino.io*
 
-After creation, several sections will be shown in order to configure, control
-and program our device as seen on Fig. 8.
+Después del registro del dispositivo, se mostrarán varias secciones que permitirán configurarlo, controlarlo y programarlo. Así como asociarlo a nuestro conector WiFi de Cloudino, como se ve en la Fig. 8.
 
   ![CWC General Information](./images//cdn_07.png)
-  *Fig. 7. CWC General Information*
+  *Fig. 7. Información general del conector WiFi de Cloudino*
 
 The General View shows the device's id, authentication token (Auth Token), name,
 description, type and security level (public or private). This information will
