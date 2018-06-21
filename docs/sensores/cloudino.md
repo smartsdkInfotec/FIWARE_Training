@@ -1,4 +1,4 @@
-# Creación de una unidad de monitoreo de calidad del aire con Cloudino
+# Creación de una unidad de monitoreo con Cloudino
 
 ## Introducción 
 
@@ -34,7 +34,7 @@ El conector WiFi de Cloudino puede ser adquirido directamente contactando a su d
 o puede construir su propio conector utilizando un dispositivo [ESP8266](https://www.sparkfun.com/products/13678)
 y siguiendo las instrucciones de la [documentación de Cloudino](https://github.com/Cloudino/Cloudino-Doc/wiki/Make-your-first-Cloudino).
 
-## Modelo de conexión de la unidad de monitoreo de calidad del aire 
+## Modelo de conexión de la unidad de monitoreo
 
 Fig. 1 muestra el modelo de conexión para una unidad de monitoreo de calidad del aire donde la placa de Arduino Uno conecta cuatro sensores, los cuales miden: temperatura, humedad, monóxido de carbono (CO), óxido de nitrógeno (NO2) y partículas de polvo (PM10), además conecta el conector WiFi de Cloudino que permite enviar las mediciones de los sensores a la nube utilizando el portal
 [cloudino.io](http://cloudino.io/).
