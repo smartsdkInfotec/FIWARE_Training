@@ -191,60 +191,38 @@ Ahora, cargaremos el "Sketch" en el dispositivo asociado a nuestra unidad de mon
 
 En el campo "Upload from Sketcher" se despliega una lista de los "sketch´s" existentes en la plataforma, incluyendo ejemplos y los desarrollados por el usuario de la sesión. Seleccione el "Sketch" que acaba de crear (en este ejemplo lo llamamos "AirQualityMonitorUnit_sketch") como se muestra en la Fig. 18.
 
- press the
-"Upload Sketcher" button in order to flash the compiled code in the CWC memory
-and the Arduino board to perform the developed functionality. The application
-logic is stored after flashing concludes succesfully Figures 18 and 19 show the
-process described above.
+Una vez seleccionado, presione el botón "Upload Sketcher" para flashear el código compilado en la memoria del Arduino y el conector WiFi de Cloudino. La lógica de la aplicación es almacenada después de que este proceso concluya con éxito. Las figuras 18 y 19 muestran este proceso. 
 
   ![Selecting a sketch for the device](./images//cdn_18.png)
-  *Fig. 18. Selecting a sketch for the device*
+  *Fig. 18. Selección de un Sketch para cargarlo al dispositivo*
 
   ![Upload process of the sketch inside the CWC](./images//cdn_19.png)
-  *Fig. 19. Upload process of the sketch inside the CWC.*
+  *Fig. 19. Proceso de carga del Sketch al conector WiFi de Cloudino*
 
-At this point, the functionality of the system according to the Fig. 1 is working.
-While the monitoring station is powered and connected to internet it will be
-able to send measurements to the cloudino.io server; with that said, data can
-be observed and used remotely.
-The developed code periodically sends the values reported by the sensors each
-second and displays them in the **"Messages"** section of the cloudino.io platform,
-as shown in Fig. 20. The console is updated in real time indefinitely while
-Cloudino is operating.
+En este punto, la unidad de monitoreo está funcionando. Mientras esté conectada a una fuente de alimentación y conectada a internet, podrá enviar las mediciones de los sensores al servidor cloudino.io; por lo tanto, los datos se pueden observar y usar de forma remota. 
+
+El código desarrollado envía periódicamente los valores obtenidos por los sensores cada segundo y los muestra en la sección **"Messages"** de la plataforma cloudino.io, como se muestra en la Fig. 20. La consola se actualiza en tiempo real indefinidamente mientras Cloudino está funcionando.
 
   ![Real-time measurements from your AirQuality monitoring unit](./images//cdn_20.png)
-  *Fig. 20. Real-time measurements from your AirQuality monitoring unit*
+  *Fig. 20. Mediciones en tiempo real de la unidad de monitoreo de la calidad del aire*
 
-## Your Cloudino as IoT Agent
+## Cloudino como agente IoT de FIWARE
 
-The Cloudino itself operates as an IoT Agent able to work with FIWARE.
-Its Cloudino Platform lets us connect to the FIWARE Orion Context Broker following
-a simple series of steps.
+Cloudino funciona como un agente IoT capaz de trabajar con FIWARE. Su plataforma Cloudino nos permite conectarnos a un Orion Context Broker (OCB) de FIWARE siguiendo unos pasos sencillos. 
 
-To share the data of your developed air quality station in Cloudino with the
-FIWARE platform, you must first enter the **"FIWARE OCB"** menu and select the
-**"Add Entity"** option; this section helps you to define a link with the FIWARE
-platform. As shown on Fig. 21, it is neccesary to define a name for the link,
-a description and select a device (CWC) to be associated with the platform.
-In this manner, the data collected by Cloudino can be shared with the FIWARE
-platform.
+Para compartir los datos de su unidad de monitoreo de calidad del aire con la plataforma FIWARE, primero debe ingresar al menú **"FIWARE OCB"** que se encuentra en la parte inferior izquierda y seleccionar la opción **"Add Entity"**. Esta sección lo ayuda a definir un enlace con la plataforma FIWARE. Como se muestra en la Fig. 21, es necesario definir un nombre para el enlace, una descripción y seleccionar un dispositivo (el connector WiFi de Cloudino registrado en cloudino.io) para asociarlo con la plataforma. De esta manera, los datos recopilados por Cloudino se pueden compartir con la plataforma FIWARE.
 
   ![Creating a link with the FIWARE platform](./images//cdn_21.png)
-  *Fig. 21. Creating a link with the FIWARE platform*
+  *Fig. 21. Creación de un enlace de Cloudino con la plataforma FIWARE*
+  
+Una vez que el enlace ha sido creado, se despliega un panel de configuración, donde puede activar o desactivar el enlace, definir una entidad (FIWARE entity), la cual se compartirá en la plataforma FIWARE, así como especificar la dirección del servidor del Orion Context Broker que se utilizará para enviar los datos (en este caso nuestro servidor se encuentra en la dirección IP http://207.249.127.132:1026) y, cuando se requiera, los datos de autenticación necesarios para conectar al servidor.   
 
-Once a link has been created, a configuration panel is displayed (Fig 22)
-where you can activate/deactivate the link, define the entity (data set) which
-will be shared in the FIWARE platform as well as the OCB server address that
-will be used to send the data and, when appropriate, the authentication data
-required to connect to the server. Fig. 22 shows the definition of the entity
-"AirQualityMonitorUnit:Entity" that includes all the data obtained from the
-previously developed air quality monitoring unit.
+La Fig. 22 muestra la definición de la entidad “AirQualityMonitorUnit:Entity” que incluye todos los datos a obtener de los sensores de su unidad de monitoreo de calidad del aire. 
 
   ![Configuration panel of the FIWARE OCB Link and entity definition](./images//cdn_22.png)
-  *Fig. 22. Configuration panel of the FIWARE OCB Link and entity definition*
+  *Fig. 22. Panel de configuración del enlace con la plataforma FIWARE*
 
-The following JSON code describes the entity “AirQualityMonitorUnit:Entity”
-created in the previus step (Fig. 22):
+El siguiente código JSON describe la entidad “AirQualityMonitorUnit:Entity” creada en el paso anterior. 
 
 ```json
 {
@@ -300,30 +278,20 @@ created in the previus step (Fig. 22):
   }
 ```
 
-***It is important to notice that the names of the variables used in cloudino must
-be equal to the names defined in the attributes of the FIWARE entity model.***
+***Es importante observar que los nombres de las variables utilizadas en Cloudino deben ser iguales a los nombres definidos en los atributos del modelo de entidad FIWARE***.
 
-After configuring the link, you must switch the "Active" option to **"ON"** and
-define the entity (previous JSON code) to be shared with FIWARE, then click the
-"Submit" button. It will automatically start to submit the data from the air
-quality monitoring unit to the FIWARE OCB.
+Después de configurar el enlace, debe cambiar la opción **"Active"** a **"ON"** y definir la entidad (código JSON anterior) para compartirla con FIWARE, luego haga clic en el botón "Submit". Automáticamente comenzará a enviar los datos de la unidad de monitoreo de la calidad del aire al Orion Context Broker de FIWARE.
 
-To verify the operation, we can access the associated OCB server defined in the
-previous figure, i.e. <http://207.249.127.132:1026/v2> without any authentication.
-In this way, Fig. 23. shows how the data defined in the entity and associated
-with the Cloudino is displayed and updated in real time on the FIWARE OCB server.
+Para verificar la operación, podemos acceder al servidor del Orion Context Broker asociado (en este caso http://207.249.127.132:1026/v2) sin autenticación. La Fig. 23 muestra cómo los datos definidos en la entidad y asociado con el Cloudino, se despliegan y actualizan en tiempo real en el servidor del Orion Context Broker. 
 
   ![Data of air quality monitoring unit in the FIWARe OCB](./images//cdn_23.png)
-  *Fig. 23. Data of air quality monitoring unit in the FIWARe OCB*
+  *Fig. 23. Datos de la unidad de monitoreo en el servidor OCB de FIWARE*
 
-As can be seen on Fig. 23, the data of the air quality monitoring unit can
-be accessed with the following REST call:
+Como puede verse en la Fig. 23, los datos de la unidad de monitoreo de la calidad del aire pueden consultarse utilizando la siguiente llamada REST: 
+
 <http://207.249.127.132:1026/v2/entities/AirQualityMonitorUnit:Entity>,
 
-where we can see the real time information of the air quality monitoring
-sensors controlled through the Cloudino platform. The information can now be
-used by any kind of IoT application.
+donde podemos ver la información en tiempo real de los sensores de monitoreo de la calidad del aire controlados a través de la plataforma Cloudino. La información ahora puede ser utilizada por cualquier tipo de aplicación IoT.
 
-Further details to developed your IoT applications with Cloudino and integrate
-with the FIWARE platform can be found here: <https://github.com/Cloudino/Cloudino-Doc>
+Puede encontrar más información sobre aplicaciones IoT desarrolladas con Cloudino y cómo integrarlas con la plataforma FIWARE en el siguiente enlace: <https://github.com/Cloudino/Cloudino-Doc>
 
