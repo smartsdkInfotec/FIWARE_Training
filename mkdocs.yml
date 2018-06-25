@@ -1,7 +1,7 @@
 site_name: Aprende FIWARE en Español
 repo_url: https://github.com/smartsdkInfotec/FIWARE_Training
 edit_uri: edit/master/docs
-site_description: A short guide to use SmartSDK platform
+site_description: En este sitio encontrarás una guía para desarrollar tu primera aplicación con la tecnología FIWARE. 
 docs_dir: 'docs'
 theme: readthedocs
 pages:
