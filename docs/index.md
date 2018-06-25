@@ -1,2 +1,2 @@
-# Bienvenidos al material de capacitación de FIWARE
-En este sitio encontrarás el material necesario para crear tu primera aplicación de FIWARE.
+# Bienvenidos a FIWARE en Español
+En este sitio encontrarás el material necesario para desarrollar soluciones inteligentes basadas en la tecnología FIWARE.
