@@ -10,7 +10,7 @@ pages:
     - El ecosistema FIWARE:
         - 'La plataforma FIWARE': 'ecosistemaFIWARE/FIWAREPlatform.md'
         - 'La nube de FIWARE': 'ecosistemaFIWARE/FIWARELab.md'
-        - 'Orion Context Broker': 'ecosistemaFIWARE/ocb.md'
+        - Contexto:
             - 'Orion Context Broker': 'ecosistemaFIWARE/ocb.md'
             - 'Modelo NGSI': 'ecosistemaFIWARE/ngsi.md'
             - 'Operaciones en OCB': 'ecosistemaFIWARE/operations.md'
