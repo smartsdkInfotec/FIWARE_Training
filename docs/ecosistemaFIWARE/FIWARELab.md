@@ -5,14 +5,28 @@ Para tener acceso a FIWARE Lab, es necesario contar con una cuenta que brinde ac
 Consulta los términos de privacidad [Términos de privacidad](https://goo.gl/kIjJhA) y los [Términos y condiciones de uso de FIWARE Lab](https://goo.gl/cVSeNq), así como las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México.
 
 ## Tipos de cuenta 
-**Basic**
+**"Trial"**: Los usuarios "Trial" pueden acceder a FIWARE Lab con recursos limitados para probar las tecnologías FIWARE durante un período corto de tiempo (14 días). Una vez que expira el período de prueba, la cuenta se deshabilita y se liberan los recursos asociados. Si el usuario desea continuar utilizando los recursos a largo plazo, deberán solicitar (y obtener) y una cuenta "Community" previo a la expiración del periodo de prueba.
 
-**Trial**: Los usuarios "Trial" pueden acceder a FIWARE Lab con recursos limitados para probar las tecnologías FIWARE durante un período corto de tiempo (14 días). Si el usuario desea continuar utilizando los recursos a largo plazo, deberán solicitar (y obtener) y una cuenta "Community".
-
-**Community**: Los usuarios "Community" son usuarios que han solicitado formalmente un entorno a largo plazo para trabajar en el desarrollo de aplicaciones basadas en tecnologías FIWARE. 
+**"Community"**: Los usuarios "Community" son usuarios que han solicitado formalmente un entorno a largo plazo para trabajar en el desarrollo de aplicaciones basadas en tecnologías FIWARE. 
 
 
-## Solicita una cuenta Community en FIWARE Lab
+## Solicita una cuenta "Trial" en FIWARE Lab
+1. Ingrese a la página de FIWARE Lab: <https://cloud.lab.fiware.org>
+2. Seleccione la opción "Create Account".
+  ![CrearcuentaTrial](./images//FL-01.jpg)
+  
+3. Complete los datos para solicitar una Cuenta "Trial":
+    - "Name": ingrese un nombre de usuario para crear su cuenta.
+    - "Email": ingrese el correo electrónico que usará para acceder a FIWARE Lab.
+    - "FIWARE Lab region": seleccione el nodo de FIWARE en el que desea crear su cuenta. 
+    - "I accept the FIWARE Lab Terms & Conditions": acepte los  términos y condiciones de uso de FIWARE Lab. Puede consultar la versión en españól en [Términos y condiciones de uso de FIWARE Lab](https://goo.gl/cVSeNq).
+
+4.	Haga clic en el botón “Submit” para que el formulario de solicitud de cuenta sea enviado. Recibirá un correo electrónico de confirmación desde <communityaccount@fiware.org>. Si no recibe el correo, revise su bandeja de SPAM o contacte  al centro de soporte <fiware-lab-help@lists.fiware.org>.
+
+  ![Crearcuenta](./images//FL-02.jpg)
+  
+  
+## Solicita una cuenta "Community" en FIWARE Lab
 Para solicitar una cuenta Community, deberá llenar un formulario de solicitud desde el sitio web de
 [FIWARE Lab](https://cloud.lab.fiware.org), donde se le solicita describir de manera breve su proyecto y listar los componentes
 de FIWARE que utilizará. Revise las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México para mayor información.
@@ -21,11 +35,11 @@ Las instrucciones para solicitar una cuenta Community se describen a continuaci�
 
 1. Ingrese a la página de FIWARE Lab: <https://cloud.lab.fiware.org>
 2. Seleccione la opción "Request Community Account".
-  ![Crearcuenta](./images//FL-01.jpg)
+  ![CrearcuentaCommunity](./images//FL-03.jpg)
   
 3.	Complete los datos para solicitar una Cuenta Community:
     - "User full name": ingrese su nombre completo.
-    - "User account email": ingrese el correo electrónico con el que registró su cuenta básica en FIWARE Lab.
+    - "User account email":ingrese el correo electrónico que usará para acceder a FIWARE Lab (si ya tiene una cuenta, ingrese el correo electrónico registrado al crear su cuenta).
     - "Are you already registrered in FIWARE Lab? YES – NO": confirme que ha creado una cuenta básica en FIWARE Lab. 
     - "Company": indique la compañía / institución a la que pertenece. 
     - "Department": indique el departamento al que pertenece. 
@@ -51,6 +65,6 @@ Las instrucciones para solicitar una cuenta Community se describen a continuaci�
     - "Name": indique su nombre (opcional).
     - "Email": indique un correo electrónico (opcional).
 
-Haga clic en el botón “Submit” para que el formulario de solicitud de cuenta Community sea enviado. Recibirá un correo electrónico de confirmación desde <communityaccount@fiware.org>. Si no recibe el correo, revise su bandeja de SPAM o contacte  al centro de soporte <fiware-lab-help@lists.fiware.org>.
+4.	Haga clic en el botón “Submit” para que el formulario de solicitud de cuenta Community sea enviado. Recibirá un correo electrónico de confirmación desde <communityaccount@fiware.org>. Si no recibe el correo, revise su bandeja de SPAM o contacte  al centro de soporte <fiware-lab-help@lists.fiware.org>.
 
-  ![Crearcuenta](./images//FL-02.jpg)
+  ![Crearcuenta](./images//FL-04.jpg)
