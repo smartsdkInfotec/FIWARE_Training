@@ -47,12 +47,7 @@ Las instrucciones para solicitar una cuenta Community se describen a continuaci�
     - "Startup / Project name": indique el nombre de su startup o proyecto.
     - "Accelerator programe name": seleccione la opción (México).
     - "Accelerator submission name": deje este espacio en blanco. 
-    - "Startup / Project description": describa su proyecto incluyendo los siguientes puntos: 
-      - Objetivo
-      - Áreas de aplicación (turismo, salud, seguridad, etc.)
-      - Descripción de la aplicación que desea desarrollar y sus beneficios
-      - Tiempo estimado de desarrollo
-      - Recursos de FIWARE que impactan a su proyecto
+    - "Startup / Project description": describa su proyecto incluyendo el objetivo, áreas de aplicación (turismo, salud, seguridad, etc.), descripción de la aplicación que desea desarrollar y sus beneficios, el tiempo estimado de desarrollo y los recursos de FIWARE que impactan a su proyecto.
     - "Preferred FIWARE Lab Node": Seleccione México
     - "Proof of concept URL": (en caso de tenerla) indique la URL donde se pueda acceder a la prueba de concepto de su proyecto (demo).
     - "Number of VMs": indique el número de máquinas virtuales (MVs) que requiere para su proyecto.
