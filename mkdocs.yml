@@ -7,7 +7,7 @@ theme: readthedocs
 pages:
     - Inicio: 'index.md'
     - Introducción: 'introduction.md'
-    - El ecosistema FIWARE:
+    - Ecosistema FIWARE:
         - 'Introducción a FIWARE': 'ecosistemaFIWARE/introduccion.md'
         - 'La plataforma FIWARE': 'ecosistemaFIWARE/plataformaFIWARE.md'
         - 'La nube de FIWARE (FIWARE Lab)': 'ecosistemaFIWARE/FIWARELab.md'
@@ -21,6 +21,8 @@ pages:
         - 'Crea tu unidad de monitoreo': 'sensores/cloudino.md'
         - 'Datos abiertos de la CDMX': 'datosabiertos/airecdmx.md'
         - 'Despliega tu OCB en FIWARE Lab': 'casodeestudio/ocbFIWARELab.md'
+    - FIWARE México:
+        - 'Sobre nosotros': 'FIWAREMexico/sobrenosotros.md'
        #- 'Additional Documentation': 'references.md'
 
 #
