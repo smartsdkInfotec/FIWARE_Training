@@ -40,19 +40,18 @@ Las instrucciones para solicitar una cuenta Community en el nodo FIWARE Lab de M
       - Recursos de FIWARE que impactan a su proyecto
     - Preferred FIWARE Lab Node: Seleccione México
     - Proof of concept URL: (en caso de tenerla) indique la URL donde se pueda acceder a la prueba de concepto de su proyecto (demo).
-    
-    
+       
 Los siguientes campos son para indicar los recursos de nube que requiere para su proyecto. Nota: las cuotas máximas son: MVs: 5, vCPUs: 10, hardisk: 100 Gb, Memory: 10240 Mb, public IP: 1.
+    - Number of VMs: indique el número de máquinas virtuales (MVs) que requiere para su proyecto.
+    - Total # vCPUs: indique el número total de CPUs virtuales que utilizarán sus máquinas virtuales. Por ejemplo: si requiere 1 CPU por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 3 CPUs. 
+    - Total RAM: indique el total de RAM que requiere en su proyecto (en Gb). Por ejemplo: si requiere 2 Gb por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 6 Gb de RAM.  
+    - Total harddisk: indique cuanto espacio de almacenamiento requiere para su proyecto (en Gb). Por ejemplo: si requiere 30 Gb por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 90 Gb de espacio de almacenamiento.  
+    - # public IPs: indique el número de IPs públicas que requiere en su proyecto. Por favor considere que se trata de un recurso escaso y costoso. El uso de soluciones como proxies, le permitirá desarrollar sus aplicaciones utilizando solamente una IP. 
+    - Object storage: si requiere un Object Storage (arquitectura de almacenamiento que gestiona datos como objetos), indique cuanto espacio necesita (en Gb). Tenga en cuenta que no todos los nodos cuentan con el servicio de Object Storage. 
+    - Additional comments /requirements / essential questions: indique si tiene algún comentario adicional, requerimiento o pregunta. Por ejemplo: una máquina virtual con más recursos de los máximos establecidos por defecto.  
+    - Name: indique su nombre (opcional).
+    - Email: indique un correo electrónico (opcional).
 
-    - Number of VMs: indique el número de máquinas virtuales (MVs) que requiere para su proyecto. 
-•	Total # vCPUs: indique el número total de CPUs virtuales que utilizarán sus máquinas virtuales. Por ejemplo: si requiere 1 CPU por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 3 CPUs. 
-•	Total RAM: indique el total de RAM que requiere en su proyecto (en Gb). Por ejemplo: si requiere 2 Gb por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 6 Gb de RAM.  
-•	Total harddisk: indique cuanto espacio de almacenamiento requiere para su proyecto (en Gb). Por ejemplo: si requiere 30 Gb por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 90 Gb de espacio de almacenamiento.  
-•	# public IPs: indique el número de IPs públicas que requiere en su proyecto. Por favor considere que se trata de un recurso escaso y costoso. El uso de soluciones como proxies, le permitirá desarrollar sus aplicaciones utilizando solamente una IP. 
-•	Object storage: si requiere un Object Storage (arquitectura de almacenamiento que gestiona datos como objetos), indique cuanto espacio necesita (en Gb). Tenga en cuenta que no todos los nodos cuentan con el servicio de Object Storage. 
-•	Additional comments /requirements / essential questions: indique si tiene algún comentario adicional, requerimiento o pregunta. Por ejemplo: una máquina virtual con más recursos de los máximos establecidos por defecto.  
-•	Name: indique su nombre (opcional).
-•	Email: indique un correo electrónico (opcional).
-a.	Haga clic en el botón “Submit” para que el formulario de solicitud de cuenta Community sea enviado. 
+Haga clic en el botón “Submit” para que el formulario de solicitud de cuenta Community sea enviado. 
 
   ![Crearcuenta](./images//FL-02.jpg)
