@@ -15,8 +15,8 @@ Consulta los términos de privacidad [Términos de privacidad](https://goo.gl/kI
 ## Solicita una cuenta en FIWARE Lab
 Para solicitar una cuenta Community, deberá llenar un formulario de solicitud desde el sitio web de
 [FIWARE Lab](https://cloud.lab.fiware.org), donde se le solicita describir de manera breve su proyecto y listar los componentes
-de FIWARE que utilizará durante la ejecución de su proyecto.  
-Revise las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México.
+de FIWARE que utilizará durante la ejecución de su proyecto. Revise las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México.
+
 Las instrucciones para solicitar una cuenta Community en el nodo FIWARE Lab de México se describen a continuación. 
 
 1. Ingrese a la página de FIWARE Lab: <https://cloud.lab.fiware.org>
