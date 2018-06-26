@@ -12,4 +12,4 @@ Para tener acceso a FIWARE Lab, es necesario contar con una cuenta que brinde ac
 **Creación de cuenta Basic**
 1. Ingrese a la página de FIWARE Lab: <https://account.lab.fiware.org/>
 2. Seleccione la opción Sign up.
-  ![Crearcuenta](./images//FL-1.jpg)
+  ![Crearcuenta](./images//FL-01.jpg)
