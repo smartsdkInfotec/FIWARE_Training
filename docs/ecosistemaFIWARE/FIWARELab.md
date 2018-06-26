@@ -1,8 +1,10 @@
 # La nube de FIWARE (FIWARE Lab)
-La nube de FIWARE (FIWARE Lab) es un entorno de pruebas no comercial donde toma lugar la innovación y experimentación basada en las tecnologías FIWARE. Los usuarios pueden probar la tecnología y sus aplicaciones haciendo uso de los recursos proporcionados por FIWARE Lab: la infraestructura de cómputo como servicio, los componentes de software de la plataforma FIWARE Y los datos abiertos publicados por ciudades y otras organizaciones. 
+La nube de FIWARE (FIWARE Lab) es un entorno de pruebas no comercial donde toma lugar la innovación y experimentación basada en las tecnologías FIWARE. Los usuarios pueden probar la tecnología y sus aplicaciones haciendo uso de los recursos proporcionados por FIWARE Lab: la infraestructura de cómputo como servicio (máquinas virtuales, espacio de almacenamiento, servicios de red), los componentes de software de la [Plataforma FIWARE](./plataformaFIWARE.md) y los datos abiertos publicados por ciudades y otras organizaciones. 
 FIWARE Lab se conforma de un conjunto de nodos federados distribuidos alrededor del mundo. Puedes consultar la [infografía en tiempo real de las capacidades de los nodos de FIWARE Lab](http://infographic.lab.fiware.org/).
 
-Para tener acceso a FIWARE Lab es necesario contar con una cuenta que brinde acceso a un espacio que permite el despliegue de una infraestructura virtual necesaria para experimentar con las tecnologías de internet de las cosas, cómputo en la nube y Big Data, a través de los GEs disponibles en FIWARE.
+  ![FIWARELab](./images//FL-00.jpg)
+  
+Para tener acceso a FIWARE Lab y contar con recursos para realizar el despliegue de una infraestructura virtual para experimentar con las tecnologías de FIWARE, es necesario solicitar una cuenta de usuario.
 
 Consulta los términos de privacidad [Términos de privacidad](https://goo.gl/kIjJhA) y los [Términos y condiciones de uso de FIWARE Lab](https://goo.gl/cVSeNq), así como las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México.
 
