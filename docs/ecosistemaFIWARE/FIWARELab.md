@@ -41,7 +41,7 @@ Las instrucciones para solicitar una cuenta Community en el nodo FIWARE Lab de M
     - Preferred FIWARE Lab Node: Seleccione México
     - Proof of concept URL: (en caso de tenerla) indique la URL donde se pueda acceder a la prueba de concepto de su proyecto (demo).
        
-Los siguientes campos son para indicar los recursos de nube que requiere para su proyecto. 
+Los siguientes campos son para indicar los recursos de nube que requiere para su proyecto:
     - Number of VMs: indique el número de máquinas virtuales (MVs) que requiere para su proyecto.
     - Total # vCPUs: indique el número total de CPUs virtuales que utilizarán sus máquinas virtuales. Por ejemplo: si requiere 1 CPU por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 3 CPUs. 
     - Total RAM: indique el total de RAM que requiere en su proyecto (en Gb). Por ejemplo: si requiere 2 Gb por cada máquina virtual y en total son 3 máquinas virtuales entonces requerirá 6 Gb de RAM.  
