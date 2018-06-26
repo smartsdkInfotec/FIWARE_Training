@@ -22,8 +22,8 @@ Las instrucciones para solicitar una cuenta Community en el nodo FIWARE Lab de M
 2. Seleccione la opción "Request Community Account".
   ![Crearcuenta](./images//FL-01.jpg)
   
-3.	Aparecerá un formulario con los siguientes campos:
-    - "User full namev: ingrese su nombre completo.
+3.	Complete los datos para solicitar una Cuenta Community:
+    - "User full name": ingrese su nombre completo.
     - "User account email": ingrese el correo electrónico con el que registró su cuenta básica en FIWARE Lab.
     - "Are you already registrered in FIWARE Lab? YES – NO": confirme que ha creado una cuenta básica en FIWARE Lab. 
     - "Company": indique la compañía / institución a la que pertenece. 
@@ -50,6 +50,6 @@ Las instrucciones para solicitar una cuenta Community en el nodo FIWARE Lab de M
     - "Name": indique su nombre (opcional).
     - "Email": indique un correo electrónico (opcional).
 
-Haga clic en el botón “Submit” para que el formulario de solicitud de cuenta Community sea enviado. 
+Haga clic en el botón “Submit” para que el formulario de solicitud de cuenta Community sea enviado. Recibirá un correo electrónico de confirmación, de la dirección de correo electrónico <communityaccount@fiware.org>.
 
   ![Crearcuenta](./images//FL-02.jpg)
