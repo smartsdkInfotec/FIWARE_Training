@@ -1,6 +1,6 @@
 # La nube de FIWARE (FIWARE Lab)
 
-Para tener acceso a FIWARE Lab, es necesario contar con una cuenta que brinde acceso a un espacio que permite el despliegue de una infraestructura virtual necesaria para experimentar con las tecnologías de internet de las cosas, cómputo en la nube y Big Data, a través de los GEs disponibles en FIWARE.
+Para tener acceso a FIWARE Lab es necesario contar con una cuenta que brinde acceso a un espacio que permite el despliegue de una infraestructura virtual necesaria para experimentar con las tecnologías de internet de las cosas, cómputo en la nube y Big Data, a través de los GEs disponibles en FIWARE.
 
 Consulta los términos de privacidad [Términos de privacidad](https://goo.gl/kIjJhA) y los [Términos y condiciones de uso de FIWARE Lab](https://goo.gl/cVSeNq), así como las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México.
 
