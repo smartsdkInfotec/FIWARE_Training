@@ -5,6 +5,8 @@ FIWARE México involucra la definición de procesos, herramientas, know-how e in
 
 **El proyecto FIWARE México es cofinanciado por el programa marco Horizonte 2020 de la Unión Europea y el Consejo Nacional de Ciencia y Tecnologia (CONACYT).**
 
+  ![financiamiento](./images//conacyt-eu.jpg)
+
 ## Objetivos
 **Objetivo 1:** diseñar e implementar un programa de entrenamiento en FIWARE a desarrolladores, integradores y contribuidores de hardware y software, asegurando la transferencia del “saber-como” de FIWARE a los actores relevantes en México. 
 
