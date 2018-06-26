@@ -2,14 +2,22 @@
 
 Para tener acceso a FIWARE Lab, es necesario contar con una cuenta que brinde acceso a un espacio que permite el despliegue de una infraestructura virtual necesaria para experimentar con las tecnologías de internet de las cosas, cómputo en la nube y Big Data, a través de los GEs disponibles en FIWARE.
 
+Consulta los términos de privacidad [Términos de privacidad](https://goo.gl/kIjJhA) y los [Términos y condiciones de uso de FIWARE Lab](https://goo.gl/cVSeNq), así como las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México.
+
 ## Tipos de cuenta 
 **Basic**
+
 **Trial**
+
 **Community**
 
-## Solicita una cuenta en FIWARE Lab
 
-**Creación de cuenta Basic**
+## Solicita una cuenta en FIWARE Lab
+Para solicitar una cuenta Community, deberá llenar un formulario de solicitud desde el sitio web de
+[FIWARE Lab](https://cloud.lab.fiware.org), donde se le solicita describir de manera breve su proyecto y listar los componentes
+de FIWARE que utilizará durante la ejecución de su proyecto.  
+Las instrucciones para solicitar una cuenta Community en el nodo FIWARE Lab de México se describen a continuación. 
+
 1. Ingrese a la página de FIWARE Lab: <https://cloud.lab.fiware.org>
 2. Seleccione la opción Sign up.
   ![Crearcuenta](./images//FL-01.jpg)
