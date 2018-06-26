@@ -7,12 +7,12 @@ Consulta los términos de privacidad [Términos de privacidad](https://goo.gl/kI
 ## Tipos de cuenta 
 **Basic**
 
-**Trial**
+**Trial**: Los usuarios "Trial" pueden acceder a FIWARE Lab con recursos limitados para probar las tecnologías FIWARE durante un período corto de tiempo (14 días). Si el usuario desea continuar utilizando los recursos a largo plazo, deberán solicitar (y obtener) y una cuenta "Community".
 
-**Community**
+**Community**: Los usuarios "Community" son usuarios que han solicitado formalmente un entorno a largo plazo para trabajar en el desarrollo de aplicaciones basadas en tecnologías FIWARE. 
 
 
-## Solicita una cuenta en FIWARE Lab
+## Solicita una cuenta Community en FIWARE Lab
 Para solicitar una cuenta Community, deberá llenar un formulario de solicitud desde el sitio web de
 [FIWARE Lab](https://cloud.lab.fiware.org), donde se le solicita describir de manera breve su proyecto y listar los componentes
 de FIWARE que utilizará. Revise las [Políticas para obtener una cuenta Community](https://goo.gl/CeWN9b) en el nodo FIWARE Lab de México para mayor información.
