@@ -1,4 +1,6 @@
 # La nube de FIWARE (FIWARE Lab)
+La nube de FIWARE (FIWARE Lab) es un entorno de pruebas no comercial donde toma lugar la innovación y experimentación basada en las tecnologías FIWARE. Los usuarios pueden probar la tecnología y sus aplicaciones haciendo uso de los recursos proporcionados por FIWARE Lab: la infraestructura de cómputo como servicio, los componentes de software de la plataforma FIWARE Y los datos abiertos publicados por ciudades y otras organizaciones. 
+FIWARE Lab se conforma de un conjunto de nodos federados distribuidos alrededor del mundo. Puedes consultar la [infografía en tiempo real de las capacidades de los nodos de FIWARE Lab](http://infographic.lab.fiware.org/).
 
 Para tener acceso a FIWARE Lab es necesario contar con una cuenta que brinde acceso a un espacio que permite el despliegue de una infraestructura virtual necesaria para experimentar con las tecnologías de internet de las cosas, cómputo en la nube y Big Data, a través de los GEs disponibles en FIWARE.
 
@@ -7,7 +9,7 @@ Consulta los términos de privacidad [Términos de privacidad](https://goo.gl/kI
 ## Tipos de cuenta 
 **"Trial"**: Los usuarios "Trial" pueden acceder a FIWARE Lab con recursos limitados para probar las tecnologías FIWARE durante un período corto de tiempo (14 días). Una vez que expira el período de prueba, la cuenta se deshabilita y se liberan los recursos asociados. Si el usuario desea continuar utilizando los recursos a largo plazo, deberán solicitar (y obtener) y una cuenta "Community" previo a la expiración del periodo de prueba.
 
-**"Community"**: Los usuarios "Community" son usuarios que han solicitado formalmente un entorno a largo plazo para trabajar en el desarrollo de aplicaciones basadas en tecnologías FIWARE. 
+**"Community"**: Los usuarios "Community" son usuarios que han solicitado formalmente un entorno a largo plazo para trabajar en el desarrollo de aplicaciones basadas en tecnologías FIWARE. Para hacer la solicitud, deberá llenar un formulario en el cual describirá la aplicación que está desarrollando y el uso planificado de los recursos de FIWARE. La solicitud pasa por un proceso de evaluación, si da como resultado una respuesta positiva, se les asignarán recursos en un nodo FIWARE Lab predeterminado y tendrán acceso a él durante un período de 9 meses, con la posibilidad de renovar el proceso de solicitud. 
 
 
 ## Solicita una cuenta "Trial" en FIWARE Lab
