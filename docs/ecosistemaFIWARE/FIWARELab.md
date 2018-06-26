@@ -16,9 +16,8 @@ Para tener acceso a FIWARE Lab, es necesario contar con una cuenta que brinde ac
   
 3.	Aparecerá el siguiente formulario y debe llenar los siguientes campos:
 
-•	Username: ingrese su nombre de usuario.
-
-•	email: ingrese su correo electrónico.
+  -	Username: ingrese su nombre de usuario.
+  - email: ingrese su correo electrónico.
 
 •	I have Gravatar and want to use it for my avatar: indique si cuenta con un Gravatar (imagen que asociada a un usuario para su identificación) que desee usar como avatar en FIWARE. 
 
