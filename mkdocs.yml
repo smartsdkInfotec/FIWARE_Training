@@ -8,14 +8,11 @@ pages:
     - Inicio: 'index.md'
     - Introducción: 'introduction.md'
     - Ecosistema FIWARE:
-        - 'Introducción a FIWARE': 'ecosistemaFIWARE/introduccion.md'
         - 'La plataforma FIWARE': 'ecosistemaFIWARE/plataformaFIWARE.md'
         - 'La nube de FIWARE (FIWARE Lab)': 'ecosistemaFIWARE/FIWARELab.md'
         - 'Modelos de datos': 'ecosistemaFIWARE/modelosdedatos.md'
-        - Gestión de información de contexto:
+        - Componentes de la plataforma FIWARE:
             - 'Orion Context Broker (OCB)': 'ecosistemaFIWARE/ocb.md'
-            - 'Modelo NGSI': 'ecosistemaFIWARE/ngsi.md'
-            - 'Operaciones en OCB': 'ecosistemaFIWARE/operaciones.md'
     - Desarrollo de soluciones con FIWARE:
         - 'Caso de estudio': 'casodeestudio/descripcion.md'
         - 'Crea tu unidad de monitoreo': 'sensores/cloudino.md'
