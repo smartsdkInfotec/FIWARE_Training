@@ -1,5 +1,6 @@
 # Requisitos 
 
 - Docker
-- CrateDB
-- Grafana
+- [CrateDB](./cratedb.md)
+- [Grafana](./grafana.md)
+
