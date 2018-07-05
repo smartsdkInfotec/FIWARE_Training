@@ -11,7 +11,8 @@ El escalamiento y replicación de tablas se hace de igual forma con SQL y el mot
 
 A continuación, se define la creación de una tabla en SQL donde además se indica la forma en que se particiona la tabla y el número de fragmentos y réplicas que tendrá, una funcionalidad particular de CrateDB:
 
-```CREATE TABLE IF NOT EXISTS t1 (
+```
+CREATE TABLE IF NOT EXISTS t1 (
 "ts" TIMESTAMP ,
 "tenant_id" INTEGER ,
 "sensor_id" STRING ,
@@ -23,3 +24,27 @@ A continuación, se define la creación de una tabla en SQL donde además se ind
 PARTITIONED BY ( "week_generated" )
 CLUSTERED BY ( "tenant_id" ) INTO 3 SHARDS;
 ```
+
+La flexibilidad de la arquitectura de CrateDB -NoSQL- permite definir la forma en que el esquema de una tabla se modifica. Cuando una sentencia INSERT incluye una columna no definida en la tabla, CrateDB se puede configurar para:
+
+- Obligar a que el esquema de la tabla se mantenga y rechazar las sentencias INSERT incorrectas.
+- Actualizar dinámicamente el esquema de la tabla, agregando la nueva columna de la sentencia INSERT.
+
+Internamente, cada registro es almacenado como un documento JSON, cuya estructura puede cambiar en tiempo de ejecución. Esta capacidad permite flexibilizar el manejo de las estructuras de datos.
+El usuario puede acceder a la información almacenada y la configuración a través de una interfaz web, una API y diversos clientes como Java, JDBC, Python, PHP, Erlang oficialmente, y Ruby, Scale, Node.js, Mono, .NET, Go, Vim, Perl, soportados por la comunidad de desarrollo.
+Fig. 1 muestra la funcionalidad de CrateDB con base a la combinación de tecnologías NoSQL, SQL y contenedores.
+
+  ![Funcionalidad de CrateDB](./images//crateDB.png)
+  *Fig. 1. Funcionalidad de CrateDB*
+  
+Con estos atributos, CrateDB se adecúa al contexto IoT y su procesamiento para análisis y visualización de series de tiempo (una serie de puntos indexados por un orden de tiempo secuencial) al posibilitar:
+
+- Consumo de millones de datapoints por segundo.
+- Versatilidad en la consulta de datos, desde series de tiempo, información geoespacial (geo-queries), búsqueda de texto, funciones de agregación, entre otras.
+- Versatilidad de los datos, como lecturas de sensores estructuradas y desestructuradas, mensajes de red, información geoespacial, logs de eventos.
+- Alto rendimiento al analizar datos en tiempo real y grandes volúmenes, realizar monitoreo de dispositivos interconectados y proveer información a los usuarios.
+- De fácil escalabilidad al contemplar el crecimiento de los datos, dispositivos y usuarios.
+- Lenguaje de consulta SQL.
+- Soporta la integración de herramientas de visualización.
+
+
