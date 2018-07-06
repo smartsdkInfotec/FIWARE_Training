@@ -14,11 +14,9 @@ pages:
         - Componentes de la plataforma FIWARE:
             - 'Orion Context Broker (OCB)': 'ecosistemaFIWARE/ocb.md'
     - Desarrollo de soluciones con FIWARE:
-        - 'Caso de estudio': 'casodeestudio/descripcion.md'
+        - 'Desarrolla tu primer aplicación en FIWARE: 'casodeestudio/descripcion.md'
         - 'Crea tu unidad de monitoreo': 'sensores/cloudino.md'
-        - 'Datos abiertos de la CDMX': 'datosabiertos/airecdmx.md'
         - 'Despliega tu OCB en FIWARE Lab': 'casodeestudio/ocbFIWARELab.md'
-        - 'Despliega tu entorno con Docker': 'casodeestudio/requisitos.md'
     - FIWARE México:
         - 'Sobre nosotros': 'FIWAREMexico/sobrenosotros.md'
        #- 'Additional Documentation': 'references.md'
