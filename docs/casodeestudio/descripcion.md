@@ -7,9 +7,9 @@ la creación de una aplicación para subir la información capturada a la nube d
 ## Arquitectura
 
 ## Requisitos de Software 
-- [Docker](./docker.md) https://docs.docker.com/
-- [CrateDB](./cratedb.md)
-- [Grafana](./grafana.md)
+- [Docker](./herramientas//docker.md) https://docs.docker.com/
+- [CrateDB](./herramientas//cratedb.md)
+- [Grafana](./herramientas//grafana.md)
 
 ## Instalación del ambiente
 
