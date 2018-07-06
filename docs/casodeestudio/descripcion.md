@@ -1,10 +1,14 @@
 
 ## Descripción
-la creación de una aplicación para subir la información capturada a la nube de la Plataforma FIWARE, a través del componente Orion Context Broker y utilizando el protocolo NGSI que asegure que la información pueda representarse en un esquema estándar. Esto permite que pueda capturarse información de diferentes tipos de sensores analógicos o digitales.
+La aplicación consiste en el monitoreo ambiental a través de dispositivos que envíen datos de contaminantes a una infraestructura de cómputo en la nube para ser consumidos y procesados por diferentes aplicaciones.
+Es importante contar con la información histórica capturada por los dispositivos para su posterior análisis y visualización.
+El análisis de la evolución de contaminantes se realiza a través de series de tiempo (una secuencia de datos indexados en función del tiempo) en donde la visualización de los datos es de gran ayuda para su interpretación.
+
 
 [Datos abiertos de la calidad del aire de la Ciudad de México](./datosabiertos//airecdmx.md)
 
-## Arquitectura
+## Esquema de datos en FIWARE
+![Esquema de datos en FIWARE](./images//esquemadatos.png)
 
 ## Requisitos de Software 
 - [Docker](./herramientas//docker.md) https://docs.docker.com/
