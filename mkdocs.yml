@@ -13,6 +13,9 @@ pages:
         - 'Modelos de datos': 'ecosistemaFIWARE/modelosdedatos.md'
         - Componentes de la plataforma FIWARE:
             - 'Orion Context Broker (OCB)': 'ecosistemaFIWARE/ocb.md'
+            #- 'Keystone'
+            #- 'Kurento'
+            #- 'WireCloud'
     - Desarrollo de soluciones con FIWARE:
         - 'Desarrolla tu primer aplicación en FIWARE': 'casodeestudio/descripcion.md'
         - 'Crea tu unidad de monitoreo': 'sensores/cloudino.md'
