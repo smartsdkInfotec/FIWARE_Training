@@ -30,10 +30,49 @@ La información de contexto en OMA NGSI se representa a través de estructuras d
 ![modeloNGSI](./images//ModeloNGSI.jpg) 
 
 ## API RESTful NGSI v2
+La API FIWARE NGSI (Next Generation Service Interface) define:
+- Un modelo de datos para la información de contexto, basada en un modelo de información simple usando la noción de entidades de contexto.
+- Una interfaz de datos de contexto para el intercambio de información por medio de operaciones de consulta, suscripción y actualización.
+- Una interfaz de disponibilidad de contexto para el intercambio de información sobre cómo obtener información de contexto (si se separan o no ambas interfaces está aún bajo discusión).
 
 ### Representación de una entidad en JSON
+El "payload" de respuesta de la  API en esta especificación se basan en application/json y  (para atributos del tipo “operation”) en los tipos MIME text/plain. Los clientes enviando peticiones HTTP con “accept types” diferentes de éstos recibirán un error del tipo 406 Not Acceptable.
 
-### Representación de un atributo en JSON
+El identificador de la entidad se especifica mediante la propiedad "id" del objeto, cuyo valor es una cadena que contiene el identificador de la identidad.
+El tipo de entidad se especifica por la propiedad "type" del objeto, cuyo valor es una cadena que contiene el nombre del tipo de entidad.
+
+Los atributos de la entidad se especifican mediante propiedades adicionales:
+- El nombre del atributo se especifica mediante la propiedad "name", cuyo valor es una cadena que contiene el nombre del atributo. 
+- El valor del atributo se especifica mediante la propiedad "value", cuyo valor puede ser cualquier tipo JSON.
+- El tipo de atributo se especifica por la propiedad "type", cuyo valor es una cadena que contiene el tipo NGSI.
+- El atributo metadata se especifica en la propiedad "metadata". Su valor es otro objeto JSON, que contiene una propiedad por elementos de metadatos definidos (el nombre de la propiedad es el nombre del elemento de metadatos).
+
+*No se permite usar "id" y "type" como nombres de atributos.
+
+Representación de una entidad: 
+![Representación de una entidad](./images//ngsi_01.png)
+
+Representación de un atributo: 
+![Representación de un atributo](./images//ngsi_02.png)
 
 
 
+### Operaciones con la API RESTful NGSI v2
+- Comprobación de la versión
+![version](./images//ngsi_0.png)
+
+- Operaciones con entidades
+
+
+  - GET /v2/entities (devuelve todas las entidades)
+  - POST /v2/entities (crea una entidad)
+  - GET /v2/entities/{entityID} (devuelve una entidad)
+  - [PUT|PATCH|POST] /v2/entities/{entityID} (actualiza una entidad)
+  - DELETE /v2/entities/{entityID} (borra una entidad)
+  - GET /v2/entities/{entityID}/attrs/{attrName} (devuelve los datos de un atributo)
+  - PUT /v2/entities/{entityID}/attrs/{attrName} (actualiza un dato de un atributo)
+  - DELETE /v2/entities/{entityID}/attrs/{attrName} (borra un atributo)
+  - GET /v2/entities/{entityID}/attrs/{attrName}/value (devuelve el valor de un atributo)
+  - PUT /v2/entities/{entityID}/attrs/{attrName}/value (actualiza el valor de un atributo)
+
+ 
