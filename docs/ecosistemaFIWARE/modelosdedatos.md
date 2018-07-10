@@ -3,15 +3,13 @@
 Los modelos de datos se han armonizado para permitir la portabilidad de datos para diferentes aplicaciones, incluidas, entre otras, Smart Cities. Están destinados a ser utilizados junto con FIWARE NGSI versión 2.
 
 ## Modelo de alertas 
-El objetivo del modelo es apoyar la generación de notificaciones para un usuario o desencadenar otras acciones, basadas en dichas alertas.
+El objetivo del [modelo de alertas](http://fiware-datamodels.readthedocs.io/en/latest/Alert/doc/spec/index.html) es apoyar la generación de notificaciones para un usuario o desencadenar otras acciones, basadas en dichas alertas.
 
 Esta entidad modela una alerta y podría usarse para enviar alertas relacionadas con atascos, accidentes, condiciones climáticas, alto nivel de contaminantes, etc.
 
 Una alerta es generada por una situación específica. Las principales características de una alerta es que no es predecible y no es un dato recurrente. Eso significa que una alerta podría ser un accidente o un alto nivel en la medición de un contaminante, además, podría ser la caída de un paciente o un automóvil que conduce en dirección opuesta.
 
 Algunos ejemplos de datos contextuales son: tipo de alerta (tráfico, clima, seguridad, contaminación, etc.), ubicación, etc.
-
-Consulta el esquema JSON del [modelo de alertas](http://fiware-datamodels.readthedocs.io/en/latest/Alert/doc/spec/index.html)
 
 ## Modelos de datos de parques y jardines
 Estos modelos de datos están diseñados para modelar parques, jardines y espacios verdes relacionados en una ciudad. Los principales tipos de entidad identificados son:
