@@ -1,18 +1,11 @@
 # Capacitación presencial en FIWARE
 
-En los videos de la Formación de expertos en FIWARE se aborda la plataforma FIWARE y componentes que facilitan el desarrollo de aplicaciones basadas en cómputo en la nube, Big Data e Internet de las Cosas. Te permitirán comprender la potencialidad de la plataforma FIWARE y obtener las capacidades teórico/prácticas para desarrollar aplicaciones utilizando los componentes de la plataforma FIWARE, así como para replicar el conocimiento adquirido a desarrolladores, integradores y proveedores de hardware y software interesados en generar soluciones innovadoras basadas en FIWARE.
+En esta capacitación se aborda la plataforma FIWARE y componentes que facilitan el desarrollo de aplicaciones basadas en cómputo en la nube, Big Data e Internet de las Cosas. Comprenderás la potencialidad de la plataforma FIWARE y obtendrás las capacidades teórico/prácticas para desarrollar aplicaciones utilizando los componentes de FIWARE, así como para replicar el conocimiento adquirido a desarrolladores, integradores y proveedores de hardware y software interesados en generar soluciones innovadoras basadas en FIWARE.
 
 ## Ecosistema FIWARE
 FIWARE es una plataforma tecnológica pública y abierta que brinda un ecosistema sostenible para el aprovechamiento de las oportunidades de la nueva ola de digitalización causado por la integración de las recientes tecnologías de Internet (Internet de las Cosas, Big Data y Cómputo en la nube). FIWARE brinda capacidades de cómputo en la nube basadas en OpenStack (FIWARE Lab), así como un conjunto de componentes abiertos ofrecidos “como servicio” (llamados Generic Enablers). Estos componentes estandarizados, genéricos, reutilizables y completamente adaptables cuentan con interfaces de programación de aplicaciones para facilitar el desarrollo de aplicaciones inteligentes, altamente especializadas, interoperables entre sí, auto-adaptables al contexto y perfil del usuario y capaces de interactuar con el usuario de forma multimodal (por voz, imagen, texto, gestos, etc.). 
 
-En estos videos se explica el ecosistema de innovación y emprendimiento abierto de FIWARE: 
-- Historia 
-- Los cinco pilares del ecosistema FIWARE
-- Introducción a la nube de FIWARE 
-- Capítulos de los componentes de FIWARE 
-- Arquitectura de FIWARE 
-- El Laboratorio Nacional de Internet del Futuro como el nodo FIWARE de México
-- Casos de aplicaciones exitosas desarrolladas con FIWARE 
+En estos videos se introduce al ecosistema de innovación y emprendimiento abierto de FIWARE.
 
 [![Ecosistema FIWARE](./images//vc1.png)](https://youtu.be/FPcrG-35UbU)
 
@@ -38,16 +31,16 @@ En este video se explica cómo FIWARE maneja la información de contexto con uno
 ## Componente "Orion Context Broker"
 Orion Context Broker es el principal componente de la plataforma FIWARE. Este componente se encarga de la gestión de la información de contexto y permite la publicación de datos de entidades (por ejemplo los sensores), de manera que la información de contexto publicada se encuentre disponible para que sea consultada por otras entidades interesadas en procesar la información (por ejemplo una aplicación móvil que usa la información de los sensores). Las operaciones básicas del Orion Context Broker son: a) registrar aplicaciones de proveedores de contexto, por ejemplo: un sensor de temperatura dentro de una habitación; b) actualizar información de contexto, por ejemplo: enviar actualizaciones de la temperatura; c) ser notificado cuando surjan los cambios en la información de contexto (por ejemplo cuando la temperatura ha cambiado), o con una frecuencia determinada (por ejemplo, obtener la temperatura cada minuto); d) consultar información de contexto.
 
-En los siguientes videos se describe el funcionamiento del Orion Context Broker y las principales funciones de su API NGSI v2. Además se realiza la instalación del ambiente de prácticas y se realizan operaciónes con el Orion Context Broker: 
-- Creación de Entidades
-- Búsqueda de entidades
-- Actualización de entidades
-- Subscripciones
+En los siguientes videos se describe el funcionamiento del Orion Context Broker y las principales funciones de su API NGSI v2. Además se realiza la instalación del ambiente de prácticas y se realizan operaciónes con el Orion Context Broker: a) Creación de Entidades, b) Búsqueda de entidades, c) Actualización de entidades y d) Subscripciones
 
 [![OCB](./images//vc4.png)](https://youtu.be/1bKragojBsU)
+
 [![OCB](./images//vc4-2.png)](https://youtu.be/Y_zEMHaqQ6I)
+
 [![OCB](./images//vc4-3.png)](https://youtu.be/5WFINBXrorY)
+
 [![OCB](./images//vc4-4.png)](https://youtu.be/MIH-s_wAjLo)
+
 [![OCB](./images//vc4-5.png)](https://youtu.be/q5AjenLE4i0)
 
 
@@ -57,6 +50,7 @@ Kurento es un framework de desarrollo que proporciona una capa de abstracción p
 En estos videos se describe el funcionamiento de Kurento para procesamiento de imagenes en tiempo real.
 
 [![Kurento](./images//vc5.png)](https://youtu.be/jFJyVGkSehg)
+
 [![Kurento](./images//vc5-1.png)](https://youtu.be/tVQ968oPMbo)
 
 
