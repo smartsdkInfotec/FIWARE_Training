@@ -21,7 +21,7 @@ pages:
         - 'Crea tu unidad de monitoreo': 'sensores/cloudino.md'
         - 'Despliega tu OCB en FIWARE Lab': 'casodeestudio/ocbFIWARELab.md'
     - Videos de FIWARE en Español:        
-        - 'FIWARE y aplicaciones': 'FIWAREMexico/videosaplicaciones.md'  
+        #- 'FIWARE y aplicaciones': 'FIWAREMexico/videosaplicaciones.md'  
         - 'Capacitación presencial en FIWARE': 'FIWAREMexico/capacitacionpresencial.md'   
     - FIWARE México:
         - 'Sobre nosotros': 'FIWAREMexico/sobrenosotros.md'
