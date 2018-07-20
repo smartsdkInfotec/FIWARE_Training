@@ -1,6 +1,6 @@
 ## FIWARE: La plataforma abierta para el futuro digital inteligente
 
-[FIWARE](https://www.fiware.org/about-us/) es un marco de componentes de plataforma de código abierto que se puede ensamblar junto con otros componentes de plataforma de terceros para acelerar el desarrollo de soluciones inteligentes.
+La [plataforma FIWARE](https://www.fiware.org/about-us/) fue desarrollada por el programa europeo para el desarrollo de Internet del Futuro (FI-PPP), quien se planteó el objetivo de construir un ecosistema sostenible alrededor de estándares abiertos donde las oportunidades pueden ser capturadas por proveedores de aplicaciones y proveedores de plataformas. FIWARE proporciona un conjunto de componentes ofrecidos “como servicio” que facilitan el desarrollo de soluciones inteligentes en múltiples sectores verticales.
 
 Una solución inteligente tiene como principal característica, que recolecta datos del entorno en el que se desenvuelve (son conscientes de su contexto), desde diferentes fuentes como usuarios finales, redes de sensores, aplicaciones móviles y todo tipo de sistemas de información como los sistemas CRM y las redes sociales. Esta información de contexto es analizada de manera que permitan la toma de decisiones automáticas, generándose las acciones “adecuadas” al entorno en el que se desenvuelve la solución.
 
