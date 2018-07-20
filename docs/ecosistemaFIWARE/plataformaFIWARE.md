@@ -9,13 +9,13 @@ A continuación se presenta el catálogo de componentes de FIWARE categorizados 
 
 ## Catálogo de componentes de la plataforma FIWARE
 
-### Gestión de Contexto
+## Gestión de Contexto
 
-### IoT, Robots y sistemas de terceros
+## IoT, Robots y sistemas de terceros
 
-### Procesamiento, análisis y visualización
+## Procesamiento, análisis y visualización
 
-### Gestión de acceso, publicación y monetización
+## Gestión de acceso, publicación y monetización
 
 
 Consulta el [catálogo de FIWARE](https://www.fiware.org/developers/catalogue/) 
