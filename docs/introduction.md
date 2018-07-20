@@ -12,7 +12,7 @@ Los componentes de plataforma estan disponibles para su descarga y también esta
 
 FIWARE también cuenta con otras iniciativas como un **programa de aceleración FIWARE**, **FIWARE Mundus** un programa de expansión de FIWARE a nivel mundial y **FIWARE iHubs** un programa de centros de innovación alrededor del mundo que contribuyan en la creación de comunidades de usuarios y contribuidores de FIWARE a nivel local.
 
-## 
+## FIWARE en México
 Este sitio fue creado con la finalidad de facilitar el acceso al conocimiento que se requiere para iniciar a desarrollar con FIWARE. Forma parte del proyecto [FIWARE México](http://www.fiwaremexico.org/), el cual cuenta con un programa de capacitación en FIWARE que busca crecer la comunidad de FIWARE en México creando capacidades técnicas para el desarrollo de aplicaciones inteligentes (puedes conocer más sobre el proyecto en la sección ["Sobre nosotros"](./FIWAREMexico//sobrenosotros.md)).  
 
 Aquí encontrarás material para aprender a desarrollar tus aplicaciones inteligentes utilizando FIWARE. Encontrarás manuales para crear tu primera aplicación con FIWARE, para construir un dispositivo de Internet de las Cosas que se comunique con FIWARE utilizando la tecnología [Cloudino](http://cloudino.io/), para obtener una cuenta en la nube de FIWARE, entre otros. 
