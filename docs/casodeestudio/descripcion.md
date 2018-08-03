@@ -3,9 +3,6 @@ La aplicación consiste en el monitoreo ambiental a través de dispositivos que 
 Es importante contar con la información histórica capturada por los dispositivos para su posterior análisis y visualización.
 El análisis de la evolución de contaminantes se realiza a través de series de tiempo (una secuencia de datos indexados en función del tiempo) en donde la visualización de los datos es de gran ayuda para su interpretación.
 
-
-[Datos abiertos de la calidad del aire de la Ciudad de México](./datosabiertos//airecdmx.md)
-
 ## Esquema de datos en FIWARE
 
 A continuación se describirá el proceso (paso a paso) para desplegar y utilizar el componente de FIWARE Orion Context Broker y servicios adicionales para almacenar datos históricos y su visualización tomando como ejemplo el modelo de datos de calidad del aire.
@@ -15,9 +12,10 @@ El diagrama presenta el flujo de información que seguirá el ejercicio, en dond
 ![Esquema de datos en FIWARE](./images//esquemadatos.png)
 
 Los servicios utilizados son:
-- Orion Context Broker
-- [CrateDB](./herramientas//cratedb.md)
-- [Grafana](./herramientas//grafana.md)
+- [Orion Context Broker](https://fiware-orion.readthedocs.io/en/1.11.0/index.html)
+- [QuantumLeap](https://quantumleap.readthedocs.io/en/latest/)
+- [CrateDB](https://crate.io/docs/crate/reference/en/latest/)
+- [Grafana](http://docs.grafana.org/)
 
 ## Requisitos de Software
 
@@ -589,8 +587,6 @@ SELECT time_index as time, CO FROM "doc"."etairqualityobserved" WHERE entity_id=
 ![Graficación de CO y tiempo de AirQualityUnit01](./images//dash05.png)
 
 3. Existen distintas opciones para personalizar la visualización acorde a nuestras necesidades como el uso de variables, definir umbrales y alertas, etc.
-
-[TODO] imagen de varibales de greenroute
 
 ![Calidad del aire CDMX](./images//dash06.png)
 
