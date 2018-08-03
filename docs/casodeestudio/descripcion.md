@@ -111,7 +111,7 @@ orion:
 El repositorio de imágenes de docker se encuentra en [hub.docker](https://hub.docker.com/)
 
 - En la etiqueta **ports** se mapea el puerto del contenedor con el puerto de la máquina host.
-P. Ej. el contenedor *orion* señala que el contenedor está expuesto por el puerto *1027*, el cual mapea al puerto 1026 de la máquina host, siguiendo el orden **Puerto_Host:Puerto_Contenedor**.
+P. Ej. *orion* señala que el contenedor está expuesto por el puerto *1027*, el cual mapea al puerto 1026 de la máquina host, siguiendo el orden **Puerto_Host:Puerto_Contenedor**.
 ```
     orion:
         ports:
@@ -461,7 +461,7 @@ http://localhost:8668/v2/entities/AirQualityUnit01?type=AirQualityObserved
 
 ![Respuesta de QuantumLeap con dos notificaciones recibidas](./images//quantumget.png)
 
-### API QuantumLeap y everificación de errores
+### API QuantumLeap y verificación de errores
 
 QuantumLeap cuenta con métodos adicionales para acceso a los datos que puede ser consultados en la [API](https://app.swaggerhub.com/apis/smartsdk/ngsi-tsdb/0.1)
 En caso de tener problemas podemos verificar los errores en las [FAQ](https://quantumleap.readthedocs.io/en/latest/user/troubleshooting/)
