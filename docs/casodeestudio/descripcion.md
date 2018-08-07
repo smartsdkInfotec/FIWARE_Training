@@ -90,7 +90,7 @@ Si la instalación se realizó correctamente, ejecutamos el siguiente comando pa
 docker run hello-world
 ```
 
-El resultado indica los pasos que se realizaron para descargar la imágen *hello-world* y desplegarla en un contenedor:
+El resultado indica los pasos que se realizaron para descargar la imagen *hello-world* y desplegarla en un contenedor:
 
 ![Docker Hello World](./images//hello.png)
 
