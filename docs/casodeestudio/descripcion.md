@@ -44,11 +44,9 @@ sudo yum install docker-ce
 
 sudo systemctl start docker
 
-sudo docker run hello-world
-
 ```
 
-Ubuntu 16.04
+Ubuntu 16.04+
 
 ```
 sudo apt-get update
@@ -58,12 +56,44 @@ sudo apt-get install apt-transport-https ca-certificates curl software-propertie
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo apt-get install docker-ce
-
-sudo docker run hello-world
 ```
-Si la instalación se realizó correctamente, el resultado de levantar el contenedor *hello-world* debe ser el siguiente:
+
+**Post-instalación** ***(sólo Linux)***
+
+***Docker-compose***
+En sistemas Linux, es necesario instalar [*docker-compose*](https://docs.docker.com/compose/install/#prerequisites) adicionalmente:
+
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+Identificamos la versión de *docker-compose* para verificar su funcionamiento.
+
+```
+docker-compose --version
+```
+![Versión de docker-compose](./images//compose.png)
+
+Finalmente, se crea un grupo *docker* y se agrega el usuario actual para poder ejecutar comandos sin necesidad de ser [usuario root](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user).
+
+```
+sudo groupadd docker
+
+sudo usermod -aG docker $USER
+```
+Reiniciamos la sesión en el sistema. En caso de utilizar una máquina virtual es necesario reiniciarla para que los cambios surtan efecto.
+
+Si la instalación se realizó correctamente, ejecutamos el siguiente comando para levantar el contenedor *hello-world*:
+```
+docker run hello-world
+```
+
+El resultado indica los pasos que se realizaron para descargar la imágen *hello-world* y desplegarla en un contenedor:
 
 ![Docker Hello World](./images//hello.png)
+
 
 ### Despliegue de servicios
 
