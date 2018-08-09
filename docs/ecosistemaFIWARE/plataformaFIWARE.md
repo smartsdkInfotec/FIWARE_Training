@@ -8,7 +8,7 @@ El principal y único componente obligatorio de cualquier plataforma o solución
 La suite de componentes de plataforma de FIWARE se describen a continuación. 
 
 ## Catálogo de componentes de la plataforma FIWARE
-Los componentes de la plataforma FIWARE (Generic Enablers) se ecuentran estructurados en capítulos: Gestión de contexto, IoT, Robots y sistemas de terceros, Procesamiento, análisis y visualización de datos de contexto y Gestión de acceso, publicación y monetización de APIs y datos de contexto.
+Los componentes de la plataforma FIWARE (Generic Enablers) se encuentran estructurados en capítulos: Gestión de contexto, IoT, Robots y sistemas de terceros, Procesamiento, análisis y visualización de datos de contexto y Gestión de acceso, publicación y monetización de APIs y datos de contexto.
 
 ## Gestión de Contexto
 - [Orion Context Broker](./ocb.md) es el componente central y obligatorio de cualquier plataforma o solución "Powered by FIWARE". Permite administrar la información de contexto de una manera altamente descentralizada y a gran escala. Proporciona la [API FIWARE NGSIv2](./ocb.md), la cual es una API Restful simple y muy potente que permite realizar actualizaciones, consultas o suscripciones a cambios en la información de contexto. El [Orion Context Broker](./ocb.md) mantiene la información del contexto actual. Sin embargo, la información de contexto evoluciona con el tiempo, creando un historial de contexto. Para apoyar el almacenamiento del historial de contexto existen los siguientes componentes: 
