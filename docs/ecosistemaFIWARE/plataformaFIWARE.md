@@ -18,10 +18,10 @@ Los componentes de la plataforma FIWARE (Generic Enablers) se ecuentran estructu
 - [Cygnus](https://catalogue-server.fiware.org/enablers/cygnus) brinda los medios para administrar el historial de contexto que se crea como una secuencia de datos que se puede inyectar en múltiples receptores de datos, incluidas algunas bases de datos populares como PostgreSQL, MySQL, MongoDB o AWS DynamoDB, así como plataformas BigData como Hadoop, Storm, Spark or Flink.
 
 - [QuantumLeap](https://quantumleap.readthedocs.io/en/latest/) permite el almacenamiento de datos de la API FIWARE NGSIv2 a una base de datos de series de tiempo, conocida como ngsi-tsdb. Cuenta con un traductor de CrateDB con lo que se brindan las siguientes ventajas:
-- Escalabilidad fácil con clúster de base de datos en contenedores
-- Soporte de Geo-consultas
-- Lenguaje de consulta tipo SQL
-- Integración soportada con herramientas de visualización como Grafana
+  - Escalabilidad fácil con clúster de base de datos en contenedores
+  - Soporte de Geo-consultas
+  - Lenguaje de consulta tipo SQL
+  - Integración soportada con herramientas de visualización como Grafana
 
 ## IoT, Robots y sistemas de terceros
 Existe una serie de componentes que facilitan la interfaz con el Internet de las cosas, robots y sistemas de terceros con el fin de recopilar información de contexto valiosa o desencadenar actuaciones en respuesta a actualizaciones de contexto:
