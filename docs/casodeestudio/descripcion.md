@@ -78,17 +78,17 @@ docker-compose --version
 
 Finalmente, se crea un grupo *docker* y se agrega el usuario actual para poder ejecutar comandos sin necesidad de ser [usuario root](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user).
 
-```
-sudo groupadd docker
-
-sudo usermod -aG docker $USER
-```
+    ```
+    sudo groupadd docker
+    
+    sudo usermod -aG docker $USER
+    ```
 Reiniciamos la sesión en el sistema. En caso de utilizar una máquina virtual es necesario reiniciarla para que los cambios surtan efecto.
 
 Si la instalación se realizó correctamente, ejecutamos el siguiente comando para levantar el contenedor *hello-world*:
-```
-docker run hello-world
-```
+    ```
+    docker run hello-world
+    ```
 
 El resultado indica los pasos que se realizaron para descargar la imagen *hello-world* y desplegarla en un contenedor:
 
@@ -103,60 +103,60 @@ Una vez finalizada la instalación de Docker, podemos realizar el despliegue de 
 
 2. Dentro de la carpeta *calidadaire*, crear un archivo llamado *docker-compose-demo.yml*, como se muestra en la estructura:
 
-```
-calidadaire
-├── docker-compose-demo.yml
-```
+    ```
+    calidadaire
+    ├── docker-compose-demo.yml
+    ```
 
 El archivo [*docker-compose-demo.yml*]((https://docs.docker.com/compose/overview/)) describe cada uno de los contenedores a desplegar así como instrucciones específicas como los puertos por donde se accederá, variables de entorno, si depende de algún otro servicio, comandos shell, etc.
 
 - Inicialmente se indica la versión de *docker-compose* que se utilizará. La versión más actual (Julio 2018) es la versión 3.
 
-```
-version: '3'
-```
+    ```
+    version: '3'
+    ```
 
 - Dentro de la etiqueta *services* se describen por secciones cada uno de los contenedores que se crearán, el usuario puede indicar los nombres que deseé para cada servicio. El archivo actual crea los servicios orion, mongo, quantumleap, crate, grafana:
 
-```
-version: '3'
-services:
-
-    orion:
-    mongo:
-    quantumleap:
-    crate:
-    grafana:
-```
+    ```
+    version: '3'
+    services:
+    
+        orion:
+        mongo:
+        quantumleap:
+        crate:
+        grafana:
+    ```
 
 - La etiqueta **image** dentro de cada servicio indica el nombre de la imagen seguido de una etiqueta con la versión de la imagen.
 
 p. Ej. el contenedor *orion* se crea a partir de la imagen *fiware/orion* con la etiqueta *1.14.0*, que descrito en el archivo docker-compose es:
 
-```
-orion:
-  image: fiware/orion:1.14.0
-```
+    ```
+    orion:
+    image: fiware/orion:1.14.0
+    ```
 
 El repositorio de imágenes de docker se encuentra en [hub.docker](https://hub.docker.com/)
 
 - En la etiqueta **ports** se mapea el puerto del contenedor con el puerto de la máquina host.
 P. Ej. *orion* señala que el contenedor está expuesto por el puerto *1027*, el cual mapea al puerto 1026 de la máquina host, siguiendo el orden **Puerto_Host:Puerto_Contenedor**.
-```
-    orion:
-        ports:
-          - "1026:1027"
-```
+    ```
+        orion:
+            ports:
+              - "1026:1027"
+    ```
 
 - La etiqueta **command** permite ejecutar comandos de consola posterior a la creación del contenedor.
 P. Ej. Después de crear el contenedor *orion*, se ejecuta el comando *-dbhost mongo* para indicar el nombre del servidor de base de datos al cual OCB se conectará.
-```
-    orion:
-        image: fiware/orion:1.14.0
-        ports:
-          - "1026:1026"
-        command: -dbhost mongo
-```
+    ```
+        orion:
+            image: fiware/orion:1.14.0
+            ports:
+              - "1026:1026"
+            command: -dbhost mongo
+    ```
 - En la sección **depends_on** se indica si un contenedor o servicio depende de otro para poderse ejecutar.
 P.Ej. En la descripción del archivo *docker-compose.yml* el contenedor *orion* requiere que el contenedor *mongo* se despliegue previamente de manera correcta para poder ejecutarse.
 
@@ -165,86 +165,86 @@ P. Ej. el contenedor *quantumleap* define la varible *CRATE_HOST* cuyo valor es 
 
 La definición del archivo *docker-compose-demo.yml* despliega los servicios indicados previamente:
 
-```
-version: '3'
+	```
+	version: '3'
 
-services:
+	services:
 
-  orion:
-    image: fiware/orion:1.13.0
-    ports:
-      - "1026:1026"
-    command: -logLevel DEBUG -noCache -dbhost mongo
-    depends_on:
-      - mongo
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://0.0.0.0:1026/version"]
-      interval: 1m
-      timeout: 10s
-      retries: 3
+	  orion:
+	    image: fiware/orion:1.13.0
+	    ports:
+	      - "1026:1026"
+	    command: -logLevel DEBUG -noCache -dbhost mongo
+	    depends_on:
+	      - mongo
+	    healthcheck:
+	      test: ["CMD", "curl", "-f", "http://0.0.0.0:1026/version"]
+	      interval: 1m
+	      timeout: 10s
+	      retries: 3
 
-  mongo:
-    image: mongo:3.2
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongodata:/data/db
+	  mongo:
+	    image: mongo:3.2
+	    ports:
+	      - "27017:27017"
+	    volumes:
+	      - mongodata:/data/db
 
-  quantumleap:
-    image: smartsdk/quantumleap
-    ports:
-      - "8668:8668"
-    depends_on:
-      - mongo
-      - orion
-      - crate
-    environment:
-      - CRATE_HOST=crate
+	  quantumleap:
+	    image: smartsdk/quantumleap
+	    ports:
+	      - "8668:8668"
+	    depends_on:
+	      - mongo
+	      - orion
+	      - crate
+	    environment:
+	      - CRATE_HOST=crate
 
-  crate:
-    image: crate:1.0.5
-    ports:
-      # Admin UI
-      - "4200:4200"
-      # Transport protocol
-      - "4300:4300"
-    command: -Ccluster.name=democluster -Chttp.cors.enabled=true -Chttp.cors.allow-origin="*"
-    volumes:
-      - cratedata:/data
+	  crate:
+	    image: crate:1.0.5
+	    ports:
+	      # Admin UI
+	      - "4200:4200"
+	      # Transport protocol
+	      - "4300:4300"
+	    command: -Ccluster.name=democluster -Chttp.cors.enabled=true -Chttp.cors.allow-origin="*"
+	    volumes:
+	      - cratedata:/data
 
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_INSTALL_PLUGINS=crate-datasource,grafana-clock-panel,grafana-worldmap-panel
-    depends_on:
-      - crate
+	  grafana:
+	    image: grafana/grafana
+	    ports:
+	      - "3000:3000"
+	    environment:
+	      - GF_INSTALL_PLUGINS=crate-datasource,grafana-clock-panel,grafana-worldmap-panel
+	    depends_on:
+	      - crate
 
-volumes:
-  mongodata:
-  cratedata:
-  redisdata:
+	volumes:
+	  mongodata:
+	  cratedata:
+	  redisdata:
 
-networks:
-    default:
-        driver_opts:
-            com.docker.network.driver.mtu: ${DOCKER_MTU:-1400}
-```
+	networks:
+	    default:
+		driver_opts:
+		    com.docker.network.driver.mtu: ${DOCKER_MTU:-1400}
+	```
 
 ***Nota: Para términos prácticos y de prueba, se utiliza docker-compose, sin embargo, para instalar los servicios en un entorno productivo (redundantes, balanceo de carga, en diferentes instancias) es necesario utilizar [docker stack deploy](https://docs.docker.com/engine/reference/commandline/stack_deploy/)***
 
 3. En una consola o terminal (Linux, MacOS) o Windows PowerShell (Windows), acceder a la ubicación de la carpeta *calidadaire* y ejecutar el comando:
-```
-docker-compose -f docker-compose-demo.yml up -d
-```
+    ```
+    docker-compose -f docker-compose-demo.yml up -d
+    ```
 el cual procesa el archivo *docker-compose.yml* y levanta los servicios con las configuraciones descritas en modo detached (se lanza como proceso de fondo y puedes continuar trabajando en la consola).
 
 4. Una vez que los servicios se despliegan correctamente, podemos verificar su funcionamiento accediendo a ellos a través de los puertos indicados en el *docker-compose* y verificando que los servicios están ejecutándose con el comando:
 
-```
-docker ps
-```
+    ```
+    docker ps
+    ```
 
 ![Servicios Docker desplegados](./images//dockerup.png)
 
@@ -413,56 +413,56 @@ En la siguiente suscripción se indica que cada que haya un cambio en los atribu
 1. Creamos una suscripción en OCB para las entidades de tipo *AirQualityObserved*, donde las notificaciones se envíen al endpoint de QuantumLeap ***http://localhost:8668/v2/notify***.
 La suscripción señala que se envíen todos los atributos de una entidad cuando exista algún cambio en los atributos señalados en *condition.attrs*. Ésta suscripción aplica para todas las entidades de tipo *AirQualityObserved*. La sección *"metadata": ["dateCreated", "dateModified"]* sirve para incluir en la notificación el *timestamp* en que se modificaron los atributos. Éste *timestamp* es utilizado por QuantumLeap como índice de tiempo en la base de datos. En caso de que no exista, QuantumLeap utiliza la fecha del sistema para realizar la indexación de los notificaciones.
 
-```
-POST localhost:1026/v2/subscriptions
-Header: Content-Type: "application/json"
+	```
+	POST localhost:1026/v2/subscriptions
+	Header: Content-Type: "application/json"
 
-{
-  "description": "Suscripcion QuantumLeap AirQuality",
-  "subject": {
-    "entities": [
-      {
-        "idPattern": ".*",
-        "type": "AirQualityObserved"
-      }
-    ],
-    "condition": {
-      "attrs": [
-        "CO",
-        "O3",
-        "PM10",
-        "SO2",
-        "NO2",
-        "temperature",
-        "relativeHumidity",
-        "dateObserved"
-      ]
-    }
-  },
-  "notification": {
-    "attrs": [
-      "id",
-      "CO",
-      "O3",
-      "PM10",
-      "SO2",
-      "NO2",
-      "temperature",
-      "relativeHumidity",
-      "dateObserved",
-      "address",
-      "location"
-    ],
-    "http": {
-      "url": "http://quantumleap:8668/v2/notify"
-    },
-    "metadata": [
-      "dateCreated",
-      "dateModified"
-    ]
-  }
-}
-```
+	{
+	  "description": "Suscripcion QuantumLeap AirQuality",
+	  "subject": {
+	    "entities": [
+	      {
+		"idPattern": ".*",
+		"type": "AirQualityObserved"
+	      }
+	    ],
+	    "condition": {
+	      "attrs": [
+		"CO",
+		"O3",
+		"PM10",
+		"SO2",
+		"NO2",
+		"temperature",
+		"relativeHumidity",
+		"dateObserved"
+	      ]
+	    }
+	  },
+	  "notification": {
+	    "attrs": [
+	      "id",
+	      "CO",
+	      "O3",
+	      "PM10",
+	      "SO2",
+	      "NO2",
+	      "temperature",
+	      "relativeHumidity",
+	      "dateObserved",
+	      "address",
+	      "location"
+	    ],
+	    "http": {
+	      "url": "http://quantumleap:8668/v2/notify"
+	    },
+	    "metadata": [
+	      "dateCreated",
+	      "dateModified"
+	    ]
+	  }
+	}
+	```
 
 ***NOTA: Es importante notar que la URL de QuantumLeap debe ser alcanzable por Orion, de tal forma que utilizando localhost:8668 para hacer referencia a QuantumLeap resultaría erróneo, si no que haría referencia a si mismo. En el escenario de los servicios en docker, podemos utilizar el nombre del contenedor http://quantumleap:8668/v2/ debido a que se encuentran en la misma red docker***
 
@@ -472,22 +472,22 @@ Header: Content-Type: "application/json"
 
 - Actualizamos una entidad.
 
-```
-PATCH http://localhost:1026/v2/entities/AirQualityUnit01/attrs
-Header: Content-Type: application/json
+	```
+	PATCH http://localhost:1026/v2/entities/AirQualityUnit01/attrs
+	Header: Content-Type: application/json
 
-{
-  "CO": {
-    "value": 25,
-    "type": "Number"
-  }
-}
-```
+	{
+	  "CO": {
+	    "value": 25,
+	    "type": "Number"
+	  }
+	}
+	```
 
 - Verificamos el registro histórico de la entidad en QuantumLeap
-```
-http://localhost:8668/v2/entities/AirQualityUnit01?type=AirQualityObserved
-```
+	```
+	http://localhost:8668/v2/entities/AirQualityUnit01?type=AirQualityObserved
+	```
 
 ![Respuesta de QuantumLeap con dos notificaciones recibidas](./images//quantumget.png)
 
@@ -507,14 +507,14 @@ Podemos acceder a CrateDB a través de una línea de comandos o mediante su GUI 
 
 1. Para verificar los datos en la GUI a través de **http://localhost:4200** ubicamos la sección *Tablas* donde observamos las tablas creadas con el prefijo **et**. P. Ej. *etairqualityobserved*.
 
-![Sección Tablas en el menu izquierdo](./images//cratetable.png)
+    ![Sección Tablas en el menu izquierdo](./images//cratetable.png)
 
 2. En la sección *Consola* podemos consultar los datos utilizando sentencias SQL.
 P. ej. para consultar los registros de AirQualityObserved
 
-```
-select * from etairqualityobsered
-```
+	```
+	select * from etairqualityobserved
+	```
 
 ![Resultado de consulta](./images//crateconsole.png)
 
