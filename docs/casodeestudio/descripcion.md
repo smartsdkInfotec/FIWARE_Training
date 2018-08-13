@@ -472,17 +472,17 @@ La suscripción señala que se envíen todos los atributos de una entidad cuando
 
 - Actualizamos una entidad.
 
-	```
-	PATCH http://localhost:1026/v2/entities/AirQualityUnit01/attrs
-	Header: Content-Type: application/json
-
-	{
-	  "CO": {
-	    "value": 25,
-	    "type": "Number"
-	  }
-	}
-	```
+    ```
+    PATCH http://localhost:1026/v2/entities/AirQualityUnit01/attrs
+    Header: Content-Type: application/json
+    
+    {
+      "CO": {
+        "value": 25,
+        "type": "Number"
+      }
+    }
+    ```
 
 - Verificamos el registro histórico de la entidad en QuantumLeap
 	```
@@ -508,6 +508,7 @@ Podemos acceder a CrateDB a través de una línea de comandos o mediante su GUI 
 1. Para verificar los datos en la GUI a través de **http://localhost:4200** ubicamos la sección *Tablas* donde observamos las tablas creadas con el prefijo **et**. P. Ej. *etairqualityobserved*.
 
     ![Sección Tablas en el menu izquierdo](./images//cratetable.png)
+
 
 2. En la sección *Consola* podemos consultar los datos utilizando sentencias SQL.
 P. ej. para consultar los registros de AirQualityObserved
