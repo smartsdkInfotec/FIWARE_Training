@@ -13,6 +13,7 @@ Algunos ejemplos de datos contextuales son: tipo de alerta (tráfico, clima, seg
 
 ## Modelos de datos de parques y jardines
 Estos modelos de datos están diseñados para modelar parques, jardines y espacios verdes relacionados en una ciudad. Los principales tipos de entidad identificados son:
+
 - **[Park](https://schema.org/Park)**: un parque es un área de espacio abierto proporcionado para uso recreativo, usualmente diseñado y en estado seminatural con áreas cubiertas de hierba, árboles y arbustos. Los parques son a menudo, pero no siempre, municipales. Por lo general, está abierto al público, pero puede estas vallado y puede estar cerrado temporalmente, por ejemplo durante la noche. Ver [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark). 
 Schema.org ya proporciona un tipo de entidad para este propósito que se puede reutilizar.
 
