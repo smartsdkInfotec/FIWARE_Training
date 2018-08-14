@@ -738,7 +738,7 @@ eval $(docker-machine env -u)
 
 ## Referencias
 
-- [Modelos de datos FIWARE](http://fiware-datamodels.readthedocs.io/en/latest/index.html)
+- [Modelos de datos FIWARE](../ecosistemaFIWARE/modelosdedatos.md)
 - [Orion Context Broker](https://fiware-orion.readthedocs.io/en/1.11.0/index.html)
 - [Docker](https://docs.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/)
