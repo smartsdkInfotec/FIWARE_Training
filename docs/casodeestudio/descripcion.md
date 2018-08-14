@@ -5,7 +5,7 @@ El análisis de la evolución de contaminantes se realiza a través de series de
 
 ## Esquema de datos en FIWARE
 
-A continuación se describirá el proceso (paso a paso) para desplegar y utilizar el componente de FIWARE Orion Context Broker y servicios adicionales para almacenar datos históricos y su visualización tomando como ejemplo el modelo de datos de calidad del aire.
+A continuación se describirá el proceso (paso a paso) para desplegar y utilizar el componente de FIWARE Orion Context Broker y servicios adicionales para almacenar datos históricos y su visualización tomando como ejemplo el modelo de datos de calidad del aire de FIWARE  ([AirQualityObserved](https://fiware-datamodels.readthedocs.io/en/latest/Environment/AirQualityObserved/doc/spec/index.html)).
 
 El diagrama presenta el flujo de información que seguirá el ejercicio, en donde se crearán una serie de entidades con el modelo datos de Calidad del Aire en Orion Context Broker, a su vez, éste notificará al servicio QuantumLeap que interpretará el modelo de datos y lo transformará en registros de la base de datos CrateDB. Posteriormente, la herramienta de visualización Grafana consultará los datos almacenados indexados por el tiempo en que se notificaron las entidades.
 
