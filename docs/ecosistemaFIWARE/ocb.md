@@ -94,7 +94,7 @@ A continuación, se describirá un caso de estudio a través del cual se explica
 
 Supongamos que tenemos un edificio con varias habitaciones y que queremos utilizar Orion Context Broker para administrar su información de contexto. Las habitaciones son Room1, Room2, Room3 y Room4 y cada habitación tiene dos sensores: temperatura y presión atmosférica (excepto Room4, que solo tiene un sensor de presión). Además, consideremos que tenemos dos autos (Car1 y Car2) con sensores capaces de medir la velocidad y la ubicación (con GPS).
 
-![Caso de ejemplo](./images//Caso_de_ejemplo.jpg) 
+![Caso de ejemplo](./images//ejemplo.jpg) 
 
 El Orion Context Broker interactúa con las aplicaciones productoras de contexto (que proporcionan información de sensor) y una aplicación consumidora de contexto (que procesa esa información, por ejemplo, para mostrarla en una interfaz gráfica de usuario). En el caso de ejemplo, se realizarán ejercicios jugando el papel de ambos tipos de aplicaciones en los tutoriales.
 
@@ -383,10 +383,146 @@ Al recibir esta solicitud, el Orion Context Broker actualiza los valores para lo
 
 Ahora se puede utilizar la operación de consulta de entidad para verificar que Room1 se haya actualizado correctamente.
 
+También se puede utilizar la operación ```PUT /v2/entities/{id}/attrs/{attrName}/value``` para actualizar el valor de un atributo de una manera realmente compacta y dejando intacto el tipo de atributo. Por ejemplo, para actualizar la temperatura de Room1 a 28.4 (tenga en cuenta que la cabecera es ```Content-Type: "text/plain"```, que corresponde al valor 28.4):
 
-  - DELETE /v2/entities/{entityID} (borra una entidad)
-  - PUT /v2/entities/{entityID}/attrs/{attrName} (actualiza un dato de un atributo)
-  - DELETE /v2/entities/{entityID}/attrs/{attrName} (borra un atributo)
-  - PUT /v2/entities/{entityID}/attrs/{attrName}/value (actualiza el valor de un atributo)
+```
+Content-Type: "text/plain"
 
- 
+PUT <cb_host>:1026/v2/entities/Room1/attrs/temperature/value
+
+28.4
+```
+
+Finalmente, la operación ```PUT /v2/entities/{id}/attrs``` se puede usar para reemplazar todos los atributos de una entidad dada, es decir, eliminar los que ya existían. 
+
+Como en el caso de la creación de entidades, además de los valores simples correspondientes a los tipos de datos JSON (es decir, números, cadenas, booleanos, etc.) para los valores de los atributos, también puede usar estructuras complejas o metadatos personalizados. Estos temas avanzados pueden consultarse en [Valores estructurados para atributos](https://fiware-orion.readthedocs.io/en/1.11.0/user/structured_attribute_valued/index.html#structured-attribute-values) y [Metadatos de atributos](https://fiware-orion.readthedocs.io/en/1.11.0/user/metadata/index.html#custom-attribute-metadata).
+
+- Suscripciones
+Las operaciones con las que se ha familiarizado hasta ahora, para crear, consultar y actualizar entidades son los componentes básicos para las aplicaciones productoras y consumidoras de contexto de manera síncrona. Sin embargo, el Orion Context Broker tiene una potente característica: la capacidad de suscribirse a la información de contexto para que cuando "algo" ocurra (veremos ejemplos de ese "algo" más adelante), la aplicación reciba una notificación asíncrona. De esta manera, no es necesario que la aplicación envíe solicitudes de consulta continuamente. El Orion Context Broker le enviará la información cuando ésta se genere mediante una notificación. 
+
+*IMPORTANTE*: Debe contar con un servidor configurado para recibir las notificaciones. En el ejemplo, el servidor está disponible desde la URL "url": http://localhost:1028/accumulate.
+
+Para crear una suscripción, se utiliza la siguiente operación ```POST /v2/subscriptions```.  
+
+Consideremos el siguiente ejemplo (tenga en cuenta que estamos usando -v para obtener el encabezado de ubicación en la respuesta, como se explica más adelante): 
+```
+Content-Type: application/json
+
+POST <cb_host>:1026//v2/subscriptions
+
+{
+  "description": "A subscription to get info about Room1",
+  "subject": {
+    "entities": [
+      {
+        "id": "Room1",
+        "type": "Room"
+      }
+    ],
+    "condition": {
+      "attrs": [
+        "pressure"
+      ]
+    }
+  },
+  "notification": {
+    "http": {
+      "url": "http://localhost:1028/accumulate"
+    },
+    "attrs": [
+      "temperature"
+    ]
+  },
+  "expires": "2040-01-01T14:00:00.00Z",
+  "throttling": 5
+}
+```
+A continuación se describen a detalle los diferentes elementos que se incluyen en el payload: 
+
+Los subcampos ```entities``` y ```attrs``` dentro de ```notifications``` definen el contenido de los mensajes de notificación. En el ejemplo, se especifica que la notificación debe incluir el atributo de temperatura (temperature) para la entidad Room1. 
+
+La URL a donde enviar las notificaciones se define con el subcampo ```url```. Solo se puede incluir una URL por suscripción. Sin embargo, puede tener varias suscripciones con distintas URLs en los mismos elementos de contexto (es decir, la misma entidad y atributo). 
+
+Las suscripciones pueden tener una fecha de vencimiento (campo ```expires```) especificado usando el formato estándar ISO 8601. Una vez que la suscripción sobrepasa esa fecha, simplemente se ignora (sin embargo, aún se encuentra almacenada en la base de datos del Orion Context Broker). Es posible ampliar la duración de una suscripción actualizándola (como se describe más adelante). En el ejemplo se utiliza una fecha lo suficientemente lejos en el tiempo (año 2040). 
+
+Es posible tener suscripciones permanentes simplemente omitiendo el campo ```expires```.
+
+El elemento ```conditions``` define el "disparador" para la suscripción. El campo ```attrs``` contiene una lista de nombres de atributos. Estos nombres definen los "atributos desencadenantes", es decir, atributos que al momento de la creación/cambio debido a la creación o actualización de la entidad activan la notificación. 
+
+La regla es que si al menos uno de los atributos en la lista de ```conditions.attrs``` cambia (como una condición de tipo OR), entonces se envía la notificación. Por ejemplo, en este caso, cuando cambia la presión (pressure) de Room1, se notifica el valor de temperatura (temperature) de Room1, pero no la presión en sí. Si desea que se notifique también la presión, la solicitud debería incluir "pressure" dentro de la lista de ```notifications.attrs``` (o utilizar un vector de atributo vacío, que significa "todos los atributos en la entidad"). Ahora, en este ejemplo, ser notificado del valor de la temperatura cada vez que cambia el valor de la presión puede no ser demasiado útil. El ejemplo se elige de esta forma solo para mostrar la enorme flexibilidad de las suscripciones.
+
+Puede dejar ```conditions.attrs``` vacíos para que cualquier cambio de atributo de entidad desencadene una notificación (independientemente del nombre del atributo). 
+
+Las notificaciones incluyen los valores de los atributos después de procesar la operación de actualización que desencadena la notificación. Sin embargo, se puede hacer que el Orion Context Broker incluya también el valor anterior. Esto se logra utilizando [metadatos en las notificaciones](https://fiware-orion.readthedocs.io/en/1.11.0/user/metadata/index.html#metadata-in-notifications). 
+
+También se puede establecer las suscripciones "notificar todos los atributos excepto algunos" (una especie de funcionalidad de "lista negra"). En este caso, se utiliza ```exceptAttrs``` en lugar de ```attrs``` dentro de ```notifications```.  
+
+Puede incluir expresiones de filtrado en ```conditions```. Por ejemplo, para recibir notificaciones no solo si la presión cambia, sino si cambia dentro del rango 700-800. Este es un tema avanzado, consulte la sección "Suscripciones" en la [especificación NGSIv2](http://telefonicaid.github.io/fiware-orion/api/v2/stable/). 
+
+El elemento de aceleración ```throttling``` se usa para especificar un tiempo mínimo de llegada entre notificaciones. Por lo tanto, establecer la aceleración en 5 segundos como en el ejemplo anterior, hace que una notificación no se envíe si se envió una notificación anterior hace menos de 5 segundos, sin importar cuántos cambios reales tengan lugar en ese período. Esto es para dar al receptor de notificación un medio para protegerse contra los productores de contexto que actualizan los valores de los atributos con demasiada frecuencia. En configuraciones multi-CB, tenga en cuenta que la última medida de notificación es local para cada nodo. Aunque cada nodo se sincroniza periódicamente con la base de datos para obtener valores potencialmente más nuevos ([más sobre esto aquí]), puede ocurrir que un nodo en particular tenga un valor anterior, por lo que el elemento ```throttling``` no es 100% preciso.  
+
+La respuesta correspondiente a esa solicitud corresponde a un código HTTP 201 indicando que la suscripción se ha creado exitósamente. Además, contiene un encabezado de ubicación con el ID de la suscripción: un número hexadecimal de 24 caracteres que se utiliza para actualizar y cancelar la suscripción (anótelo para futuros ejercicios). 
+```
+< HTTP/1.1 201 Created
+< Connection: Keep-Alive
+< Content-Length: 0
+< Location: /v2/subscriptions/57458eb60962ef754e7c0998
+< Fiware-Correlator: 9ac7bbba-2268-11e6-aaf0-d48564c29d20
+< Date: Wed, 25 May 2016 11:05:35 GMT
+```
+
+Ahora veremos el servidor acumulador. A continuación se presenta un ejemplo de la operación ```notifyContextRequest```:
+```
+POST http://localhost:1028/accumulate
+Content-Length: 141
+User-Agent: orion/1.1.0-next libcurl/7.38.0
+Ngsiv2-Attrsformat: normalized
+Host: localhost:1028
+Accept: application/json
+Content-Type: application/json; charset=utf-8
+Fiware-Correlator: 3451e5c2-226d-11e6-aaf0-d48564c29d20
+
+{
+    "data": [
+        {
+            "id": "Room1",
+            "temperature": {
+                "metadata": {},
+                "type": "Float",
+                "value": 28.5
+            },
+            "type": "Room"
+        }
+    ],
+    "subscriptionId": "57458eb60962ef754e7c0998"
+}
+```
+
+, El Orion Context Broker notifica suscripciones de contexto utilizando el método POST (en la URL de la suscripción). El payload incluye una referencia al ```id``` de la suscripción y un vector  El Orion Context Broker notifica suscripciones de contexto utilizando el método POST (en la URL de la suscripción). El payload incluye una referencia al ```id``` de la suscripción y un vector ```data``` con los datos actuales para las entidades. Tenga en cuenta que el formato de representación de la entidad es el mismo que el utilizado por las respuestas a la operación ```GET /v2/entities operation```.
+
+La notificación fue recibida por el servidor acumulador ya que ésta se envía de manera síncrona durante la creación o actualización de la suscripción. Esta notificación es llamada [notificación inicial](https://fiware-orion.readthedocs.io/en/1.11.0/user/initial_notification/index.html). 
+
+A continuación, se listan algunos ejercicios para practicar con las operaciones del Orion Context Broker: 
+
+Actualizar la temperatura de Room1 a 27: no ocurrirá nada, ya que la temperatura no es el atributo desencadenante.
+
+Actualizar la presión de Room1 a 765: recibirá una notificación con el valor actual de la temperatura de Room1 (27).
+
+Actualizar la presión de Room1 a 765: no ocurre nada, ya que el intermediario es lo suficientemente astuto como para saber que el valor anterior a la solicitud de updateContext también era 765, por lo que no se ha producido ninguna actualización real y, en consecuencia, no se envía ninguna notificación.
+
+Actualizar la presión de Room2 a 740: no ocurre nada, ya que la suscripción es para Room1, no Room2.
+
+Las suscripciones pueden ser recuperadas utilizando ```GET /v2/subscriptions``` (que proporciona la lista completa y necesita [paginación](https://fiware-orion.readthedocs.io/en/1.11.0/user/pagination/index.html) si la lista es demasiado grande) o ```GET /v2/subscriptions/{subId}``` (para obtener una sola suscripción). Además, las suscripciones se pueden actualizar utilizando la operación ```PATCH /v2/subscription/{subId}```. Finalmente, una suscripción puede ser eliminada utilizando la operación ```DELETE /v2/subscriptions/{subId}```. 
+
+- Consideraciones adicionales:
+
+Las suscripciones pueden ser pausadas. Para hacer eso, simplemente configure el atributo ```status```a ```inactive``` (si desea reanudar la suscripción, vuelva a establecerla como "active"):
+```
+{
+PATCH <cb_host>:1026/v2/subscriptions/57458eb60962ef754e7c0998
+  "status": "inactive"
+}
+```
+
+Las notificaciones se pueden personalizar de varias maneras. En primer lugar, se puede sintonizar el formato de representación de las entidades en las notificaciones, utilizando el campo ```attrsFormat``` dentro de ```notification```. En segundo lugar, se puede usar un verbo HTTP de notificación personalizado (por ejemplo PUT), personalizando las cabeceras HTTP, los parámetros de consulta y el payload (no necesariamente en JSON). Puede revisar las secciones "Notification Messages" y "Custom Notifications" en la [especificación de NGSIv2](http://telefonicaid.github.io/fiware-orion/api/v2/stable/).
+
