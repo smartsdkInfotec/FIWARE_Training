@@ -209,9 +209,11 @@ Cuya respuesta es:
 ```
 
 También se puede usar la opción de ```values``` para obtener una representación aún más compacta, con una lista de valores de los atributos. En este caso, se necesita usar el parámetro URL ```attrs``` para especificar la orden. Por ejemplo, para especificar que envíe primero la temperatura y después la presión: 
+
 ```
   GET <cb_host>:1026/v2/entities/Room1?options=values&attrs=temperature,pressure
- ```
+```
+
 Cuya respuesta es: 
 ``` 
  [
@@ -360,6 +362,7 @@ También se puede filtrar por ubicación geográfica. Este es un tema avanzado, 
 Como comentario final, tenga en cuenta que, aunque el caso de ejemplo es muy simple (solo 2 entidades), Orion Context Broker puede gestionar millones de entidades en una implementación real. Por lo tanto, de forma predeterminada, solo se devuelven 20 entidades (lo cual está bien para este tutorial, pero probablemente no para un escenario de utilización real). Para aprender sobre cómo recuperar grandes conjuntos de entidades página por página, consulte la sección de [paginación](https://fiware-orion.readthedocs.io/en/1.11.0/user/pagination/index.html#pagination) de la API walkthrough de FIWARE.
  
   - Actualización de entidades 
+  
 Es posible actualizar el valor de los atributos de una entidad utilizando la operación ```PATCH /v2/entities/{id}/attrs```. Esto supone que el atributo ya existe en la entidad.  
 Esta operación la realizan las aplicaciones productoras de contexto, es decir, una fuente de información de contexto. Por ejemplo una aplicación que en un momento dado quiere establecer la temperatura y presión de Room1 a 26.5 ºC y 763 mmHg respectivamente, por lo que emite la siguiente solicitud:
 ```
@@ -398,6 +401,7 @@ Finalmente, la operación ```PUT /v2/entities/{id}/attrs``` se puede usar para r
 Como en el caso de la creación de entidades, además de los valores simples correspondientes a los tipos de datos JSON (es decir, números, cadenas, booleanos, etc.) para los valores de los atributos, también puede usar estructuras complejas o metadatos personalizados. Estos temas avanzados pueden consultarse en [Valores estructurados para atributos](https://fiware-orion.readthedocs.io/en/1.11.0/user/structured_attribute_valued/index.html#structured-attribute-values) y [Metadatos de atributos](https://fiware-orion.readthedocs.io/en/1.11.0/user/metadata/index.html#custom-attribute-metadata).
 
 - Suscripciones
+
 Las operaciones con las que se ha familiarizado hasta ahora, para crear, consultar y actualizar entidades son los componentes básicos para las aplicaciones productoras y consumidoras de contexto de manera síncrona. Sin embargo, el Orion Context Broker tiene una potente característica: la capacidad de suscribirse a la información de contexto para que cuando "algo" ocurra (veremos ejemplos de ese "algo" más adelante), la aplicación reciba una notificación asíncrona. De esta manera, no es necesario que la aplicación envíe solicitudes de consulta continuamente. El Orion Context Broker le enviará la información cuando ésta se genere mediante una notificación. 
 
 *IMPORTANTE*: Debe contar con un servidor configurado para recibir las notificaciones. En el ejemplo, el servidor está disponible desde la URL "url": http://localhost:1028/accumulate.
@@ -498,7 +502,7 @@ Fiware-Correlator: 3451e5c2-226d-11e6-aaf0-d48564c29d20
 }
 ```
 
-, El Orion Context Broker notifica suscripciones de contexto utilizando el método POST (en la URL de la suscripción). El payload incluye una referencia al ```id``` de la suscripción y un vector  El Orion Context Broker notifica suscripciones de contexto utilizando el método POST (en la URL de la suscripción). El payload incluye una referencia al ```id``` de la suscripción y un vector ```data``` con los datos actuales para las entidades. Tenga en cuenta que el formato de representación de la entidad es el mismo que el utilizado por las respuestas a la operación ```GET /v2/entities operation```.
+El Orion Context Broker notifica suscripciones de contexto utilizando el método POST (en la URL de la suscripción). El payload incluye una referencia al ```id``` de la suscripción y un vector  El Orion Context Broker notifica suscripciones de contexto utilizando el método POST (en la URL de la suscripción). El payload incluye una referencia al ```id``` de la suscripción y un vector ```data``` con los datos actuales para las entidades. Tenga en cuenta que el formato de representación de la entidad es el mismo que el utilizado por las respuestas a la operación ```GET /v2/entities operation```.
 
 La notificación fue recibida por el servidor acumulador ya que ésta se envía de manera síncrona durante la creación o actualización de la suscripción. Esta notificación es llamada [notificación inicial](https://fiware-orion.readthedocs.io/en/1.11.0/user/initial_notification/index.html). 
 
