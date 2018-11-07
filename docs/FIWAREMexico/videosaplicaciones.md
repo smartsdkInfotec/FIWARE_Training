@@ -23,12 +23,12 @@ En este video conocerás sobre la aplicación Green Route, desarrollada con FIWA
 [![Green route – Smart mobility application](./images//v4.png)](https://youtu.be/oqA-KL7fIGk)
 
 ## Aplicación inteligente de salud 
-En este video se presenta una aplicación de salud que utiliza teléfonos móviles y dispositivos electrónicos personales para obtener datos de comportamiento de usuarios e inferir información como parámetros clínicos y para crear bases de datos que pueden utilizarse en investigaciones sobre epidemias.    
+En este video se presenta una aplicación de salud, desarrollada por CICESE, que utiliza teléfonos móviles y dispositivos electrónicos personales para obtener datos de comportamiento de usuarios e inferir información como parámetros clínicos y para crear bases de datos que pueden utilizarse en investigaciones sobre epidemias.    
 
 [![Smart health application](./images//v5.png)](https://youtu.be/y0AhlZZXIkw)
  
 ## Aplicación inteligente de seguridad
-En este video se presenta una aplicación de seguridad basado en un sistema de video vigilancia que detecta eventos de riesgo de manera automática.  
+En este video se presenta una aplicación de seguridad, desarrollada por INAOE, basado en un sistema de video vigilancia que detecta eventos de riesgo de manera automática.  
 
 [![Smart security application](./images//v6.png)](https://youtu.be/-3BvVczSs-0)
 
