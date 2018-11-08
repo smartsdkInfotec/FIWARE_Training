@@ -21,7 +21,6 @@ En caso de que cada máquina virtual requiera una configuración diferente, es p
 De manera indistinta se puede utilizar el grupo default o crear grupos nuevos dependiendo de las necesidades de administración de las máquinas virtuales.
 
 ### Grupo default
-**"Grupo default"**
 Seleccionar la opción “Acceso y seguridad” del menú y la pestaña “Grupos de seguridad”.
 
   ![GrupoDefault](./images//VMFL-02.png)
@@ -58,7 +57,7 @@ Una vez que se añade el puerto, aparece como nueva regla. En la imagen se obser
 
   ![GrupoDefaultPuertos](./images//VMFL-10.png)
 
-**"Grupo nuevo"**
+### Grupo nuevo
 Seleccionar la opción “Acceso y seguridad” del menú, ir a la pestaña “Grupos de seguridad” y dar clic en el botón “+Crear grupo de seguridad”.
 
   ![GrupoNuevo](./images//VMFL-11.png)
