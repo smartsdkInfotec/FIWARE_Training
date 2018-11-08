@@ -20,6 +20,7 @@ Por defecto, en la cuenta se genera el grupo de seguridad “default” y tambi�
 En caso de que cada máquina virtual requiera una configuración diferente, es posible asignar un grupo de seguridad diferente a cada una de ellas. Si todas las máquinas virtuales requieren la misma configuración, se puede asignar el mismo grupo de seguridad a todas.
 De manera indistinta se puede utilizar el grupo default o crear grupos nuevos dependiendo de las necesidades de administración de las máquinas virtuales.
 
+### Grupo default
 **"Grupo default"**
 Seleccionar la opción “Acceso y seguridad” del menú y la pestaña “Grupos de seguridad”.
 
