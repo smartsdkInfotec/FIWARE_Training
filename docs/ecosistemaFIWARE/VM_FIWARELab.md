@@ -23,65 +23,65 @@ De manera indistinta se puede utilizar el grupo default o crear grupos nuevos de
 **"Grupo default"**
 Seleccionar la opción “Acceso y seguridad” del menú y la pestaña “Grupos de seguridad”.
 
-  ![GrupoDefault](./images//VMFL-02.jpg)
+  ![GrupoDefault](./images//VMFL-02.png)
 
 Para verificar los puertos abiertos y/o agregar más puertos, dar clic en el botón “Administrar reglas”.
 
-  ![GrupoDefaultReglas](./images//VMFL-03.jpg)
+  ![GrupoDefaultReglas](./images//VMFL-03.png)
 
 Para agregar un puerto, dar clic en el botón “+Agregar regla”. El único puerto que aparece abierto es el 22, para permitir la conexión a través de ssh.
 
-  ![GrupoDefaultAgregarReglas](./images//VMFL-04.jpg)
+  ![GrupoDefaultAgregarReglas](./images//VMFL-04.png)
 
 Aparece una ventana como la siguiente:
 
-  ![GrupoDefaultAgregarReglasForm](./images//VMFL-05.jpg)
+  ![GrupoDefaultAgregarReglasForm](./images//VMFL-05.png)
 
 Elegir un puerto de la lista desplegable "Regla". En este caso se eligió HTTPS. Una vez seleccionado el puerto dar clic en el botón "Añadir".
 
-  ![GrupoDefaultAgregarReglasAñadir](./images//VMFL-06.jpg)
+  ![GrupoDefaultAgregarReglasAñadir](./images//VMFL-06.png)
 
 En la lista, aparecerá el puerto que se agregó. En caso de que se requiera eliminar el puerto, dar clic en el botón "Eliminar regla".
 
-  ![GrupoDefaultPuertoAgregado](./images//VMFL-07.jpg)
+  ![GrupoDefaultPuertoAgregado](./images//VMFL-07.png)
 
 En caso de que el puerto que se requiere abrir no se encuentre en la lista desplegable, dar clic en el botón “+Agregar regla”, agregar el número en el campo “Puerto” y dar clic en el botón “Añadir”.
 
-  ![GrupoDefaultNumeroPuerto](./images//VMFL-08.jpg)
+  ![GrupoDefaultNumeroPuerto](./images//VMFL-08.png)
 
 Sí es necesario permitir el acceso a la máquina virtual a una sola IP o rango de IPs, se especifica en el campo “CIDR”. Dar clic en el botón “Añadir”.
 
-  ![GrupoDefaultNumeroPuertoCIDR](./images//VMFL-09.jpg)
+  ![GrupoDefaultNumeroPuertoCIDR](./images//VMFL-09.png)
 
 Una vez que se añade el puerto, aparece como nueva regla. En la imagen se observa que se puede iniciar sesión ssh a través de cualquier IP. Sin embargo, al puerto 1026 únicamente se puede tener acceso a través del rango de IPs definido.
 
-  ![GrupoDefaultPuertos](./images//VMFL-10.jpg)
+  ![GrupoDefaultPuertos](./images//VMFL-10.png)
 
 **"Grupo nuevo"**
 Seleccionar la opción “Acceso y seguridad” del menú, ir a la pestaña “Grupos de seguridad” y dar clic en el botón “+Crear grupo de seguridad”.
 
-  ![GrupoNuevo](./images//VMFL-11.jpg)
+  ![GrupoNuevo](./images//VMFL-11.png)
 
 Definir un nombre y descripción para el grupo de seguridad y dar clic en el botón “Crear grupo de seguridad”.
 
-  ![GrupoNuevo](./images//VMFL-12.jpg)
+  ![GrupoNuevo](./images//VMFL-12.png)
 
 Una vez creado el grupo, aparecerá de la siguiente forma:
 
-  ![GrupoNuevoCreado](./images//VMFL-13.jpg)
+  ![GrupoNuevoCreado](./images//VMFL-13.png)
 
 Para agregar un puerto dar clic en el botón “Administrar reglas”.
 
-  ![GrupoNuevoAdminReglas](./images//VMFL-14.jpg)
+  ![GrupoNuevoAdminReglas](./images//VMFL-14.png)
 
 Posteriormente dar clic en el botón “+Agregar regla”.
 
-  ![GrupoNuevoAgregarReglas](./images//VMFL-15.jpg)
+  ![GrupoNuevoAgregarReglas](./images//VMFL-15.png)
 
 Aparece una ventana como la siguiente:
 
-  ![GrupoNuevoAgregarReglasForm](./images//VMFL-05.jpg)
+  ![GrupoNuevoAgregarReglasForm](./images//VMFL-05.png)
 
 El primer puerto que se debe abrir es el 22, para permitir la conexión ssh. Se puede agregar el número 22 en el campo “Puerto” o seleccionar la opción SSH del menú desplegable del campo “Regla”. Una vez seleccionado el puerto dar clic en el botón "Añadir".
 
-  ![GrupoNuevoAgregarPuerto](./images//VMFL-16.jpg)
+  ![GrupoNuevoAgregarPuerto](./images//VMFL-16.png)
