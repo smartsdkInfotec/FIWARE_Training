@@ -11,6 +11,7 @@ pages:
         - 'La plataforma FIWARE': 'ecosistemaFIWARE/plataformaFIWARE.md'
         - 'La nube de FIWARE (FIWARE Lab)': 'ecosistemaFIWARE/FIWARELab.md'
         - 'Modelos de datos': 'ecosistemaFIWARE/modelosdedatos.md'
+        - 'Creación de una máquina virtual en FIWARE Lab': 'ecosistemaFIWARE/VM_FIWARELab.md'
         - Componentes de la plataforma FIWARE:
             - 'Orion Context Broker (OCB)': 'ecosistemaFIWARE/ocb.md'
             #- 'Keystone'
